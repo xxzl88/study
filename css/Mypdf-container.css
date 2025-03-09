@@ -1,7 +1,7 @@
 /* ================= 基础容器样式 ================= */
 .Mypdf-container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     max-width: none;
     margin: 0;
     padding: 0;
