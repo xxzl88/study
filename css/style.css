@@ -115,10 +115,39 @@ body {
 
 .announcement {
     background: white;
-    padding: 1.5rem;
-    border-radius: var(--radius-base);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    transition: var(--transition);
+    padding: 0.6rem 0.8rem;  /* 缩减垂直padding */
+    border-radius: 6px;      /* 调小圆角 */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* 更柔和的阴影 */
+    margin-bottom: 0.8rem;  /* 缩小间距 */
+    transition: transform 0.2s ease;
+}
+
+/* 卡片内部元素紧凑化 */
+.announcement h2 {
+    font-size: 1.1rem;      /* 标题缩小 */
+    margin-bottom: 0.5rem;  /* 减少标题下间距 */
+}
+
+.announcement .meta time {
+    padding: 0.2rem 0.6rem; /* 时间标签缩小 */
+    font-size: 0.85em;
+}
+
+/* 移动端微调 */
+@media (max-width: 768px) {
+    .announcement {
+        padding: 0.5rem 0.6rem;
+        margin-bottom: 0.6rem;
+    }
+    .announcement h2 {
+        font-size: 1rem;
+    }
+}
+
+/* 悬停保持视觉反馈 */
+.announcement:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
 .announcement-header {
@@ -133,22 +162,40 @@ body {
     margin-bottom: 0.8rem;
     position: relative;
 }
+/* 时间与元信息同行布局方案 */
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;  /* 元素间距 */
+    flex-wrap: wrap;  /* 允许移动端换行 */
+}
 
 .meta time {
     display: inline-flex;
+    order: 1;  /* 控制显示顺序 */
+    white-space: nowrap;  /* 禁止日期换行 */
+}
+
+/* 当需要添加其他元信息时 */
+.meta .author {
+    display: inline-flex;
     align-items: center;
-    background: rgba(127, 19, 134, 0.08);
-    color: #7d3c98;
+    background: rgba(0, 102, 179, 0.08);
     padding: 0.3rem 1rem;
     border-radius: 1rem;
-    font-size: 0.9em;
 }
 
-.meta time::before {
-    content: "📅 ";
-    margin-right: 0.3rem;
+/* 移动端优化 */
+@media (max-width: 480px) {
+    .meta {
+        gap: 0.5rem;
+        row-gap: 0.8rem;  /* 行间距 */
+    }
+    .meta time {
+        font-size: 0.85em;
+        padding: 0.2rem 0.8rem;
+    }
 }
-
 /* 详情页样式 */
 .detail-container {
     width: var(--content-width);
@@ -194,16 +241,49 @@ body {
     transform: translateX(0.5rem);
 }
 
-/* h2标题样式 */
+/* 创建弹性容器包裹标题和元信息 */
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0 1.5rem;
+}
+
+/* 调整原有h2样式 */
 .announcement-detail h2 {
     background: rgba(127, 19, 134, 0.08);
-    color: #4a2355; /* 深紫色 */
+    color: #4a2355;
     padding: 1rem 1.5rem;
     border-left: 4px solid var(--tsinghua-purple);
-    margin: 2rem 0 1.5rem;
     font-size: 1.4rem;
     border-radius: 4px 0 0 4px;
-    position: relative;
+    margin: 0; /* 移除原margin */
+    flex: 1; /* 允许标题区域扩展 */
+}
+
+/* 元信息容器优化 */
+.announcement-header .meta {
+    flex-shrink: 0; /* 禁止缩小 */
+    padding-right: 1rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .announcement-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .announcement-detail h2 {
+        border-radius: 4px; /* 恢复完整圆角 */
+    }
+    
+    .announcement-header .meta {
+        padding-right: 0;
+        text-align: right;
+    }
 }
 
 /* 内容区块排版 */
@@ -360,8 +440,6 @@ body {
     line-height: calc(var(--base-font) * var(--line-ratio));
 }
 
-
-/* 移动端优化 */
 
 /* 移动端优化 */
 @media (max-width: 768px) {
