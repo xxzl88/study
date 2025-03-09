@@ -23,7 +23,6 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
-    min-width: 1200px;
 }
 
 /* 头部样式 */
