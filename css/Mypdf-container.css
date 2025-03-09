@@ -1,7 +1,7 @@
 /* ================= 基础容器样式 ================= */
 .Mypdf-container {
     width: 100vw;
-    height: 65vh;
+    height: 100vh;
     max-width: none;
     margin: 0;
     padding: 0;
@@ -31,6 +31,7 @@
 
 @media (max-width: 768px) {
     .Mypdf-container {
+        height: 70vh;
         width: 100%; /* 强制占满横向空间 */
         max-width: none; /* 移除最大宽度限制 */
         margin: 1rem 0; /* 移除左右外边距 */
@@ -42,6 +43,7 @@
 
 @media (max-width: 480px) {
     .Mypdf-container {
+        height: 70vh;
         padding: 12px; /* 超小屏更紧凑 */
         margin: 0.5rem 0;
     }
