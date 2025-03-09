@@ -363,69 +363,39 @@ body {
 
 
 /* 移动端优化 */
-/* 移动端优化方案 */
+
+/* 移动端优化 */
 @media (max-width: 768px) {
-    :root {
-      --content-width: 95%; /* 移动端增加内容区域占比 */
-      --radius-base: 6px;   /* 调小圆角尺寸 */
-    }
-  
-    body {
-      min-width: unset; /* 移除固定宽度限制 */
-      overflow-x: hidden; /* 防止横向滚动 */
-    }
-  
-    /* 头部响应式布局 */
     .header-container {
-      flex-direction: column; /* 垂直排列 */
-      gap: 1rem;
-      padding: 0 1rem;
+      flex-direction: row !important; /* 强制横向排列 */
+      flex-wrap: wrap; /* 允许换行 */
+      justify-content: space-between; /* 两端对齐 */
+      align-items: center; /* 垂直居中 */
+      height: auto; /* 移除固定高度 */
     }
   
     .header-left {
-      width: 100%;
-      padding: 0.5rem 0;
-      text-align: center; /* 移动端居中显示 */
+      flex: 1; /* 占据剩余空间 */
+      min-width: 60%; /* 保证最小宽度 */
+      text-align: left; /* 恢复左对齐 */
+      padding: 0;
     }
   
     .header-left h1 {
-      font-size: clamp(1.2rem, 6vw, 1.8rem); /* 动态字体尺寸 */
-      white-space: normal; /* 允许标题换行 */
-    }
-  
-    .contact-info {
-      flex-direction: column; /* 垂直排列联系方式 */
-      gap: 0.8rem;
-      align-items: center;
-    }
-  
-    .separator {
-      display: none; /* 隐藏分隔线 */
+      white-space: normal; 
+      line-height: 1.3; /* 紧凑行距 */
+      margin-bottom: 0; /* 移除底部间距 */
     }
   
     .header-qrcode {
-      margin: 1rem auto; /* 二维码居中 */
-      width: 80px;
-      height: 80px;
+      margin: 0 0 0 1rem; /* 左间距间隔 */
+      flex-shrink: 0; /* 禁止缩小 */
+      width: 60px; /* 缩小尺寸 */
+      height: 60px;
     }
   
-    /* 触摸优化 */
-    a, button {
-      min-width: 44px;  /* WCAG触摸标准 */
-      min-height: 44px;
-      padding: 8px 12px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contact-column {
-      font-size: 0.9rem; /* 缩小联系方式字号 */
-      padding-left: 0;
-    }
-    
-    /* 响应式文字换行 */
-    .contact-info > span {
-      word-break: break-all;
-      text-align: center;
+    /* 第二行内容隐藏优化 */
+    .contact-info {
+      display: none !important; /* 强制隐藏联系方式 */
     }
   }
