@@ -28,3 +28,21 @@
         min-height: 100vh;
     }
 }
+
+@media (max-width: 768px) {
+    .Mypdf-container {
+        width: 100%; /* 强制占满横向空间 */
+        max-width: none; /* 移除最大宽度限制 */
+        margin: 1rem 0; /* 移除左右外边距 */
+        padding: 15px; /* 紧凑型内间距 */
+        border-radius: 0; /* 移除圆角保持全幅样式 */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 更淡的阴影 */
+    }
+}
+
+@media (max-width: 480px) {
+    .Mypdf-container {
+        padding: 12px; /* 超小屏更紧凑 */
+        margin: 0.5rem 0;
+    }
+}
