@@ -1,0 +1,145 @@
+/* 内容容器 */
+.content-area {
+    width: var(--content-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 卡片链接 */
+.announcement-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+/* 卡片主体 */
+.announcement {
+    background: var(--text-white);
+    padding: 1.5rem;
+    border-radius: var(--radius-base);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 1.5rem;
+}
+
+/* 头部容器 */
+.announcement-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* 标题样式 */
+.title-tag {
+    padding: 0.8rem 1.5rem 0.8rem 2rem; /* 增加左侧间距 */
+    position: relative;
+    flex: 1;
+    min-width: 60%;
+    display: flex;
+    align-items: center;
+    background: none !important; /* 移除背景色 */
+}
+
+/* 左侧竖线 */
+.title-tag::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 3px;
+    background: var(--tsinghua-purple);
+    border-radius: 2px;
+}
+
+.title-tag h2 {
+    color: var(--tsinghua-purple);
+    font-size: clamp(1.6rem, 1.8vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.4;
+    padding-left: 0.5rem; /* 文字与竖线间距 */
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .title-tag {
+        padding: 0.6rem 1rem 0.6rem 1.5rem;
+    }
+    
+    .title-tag::before {
+        width: 2px;
+        top: 10%;
+        bottom: 10%;
+    }
+    
+    .title-tag h2 {
+        padding-left: 0.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-tag {
+        padding-left: 1.2rem;
+    }
+    
+    .title-tag::before {
+        width: 1.5px;
+    }
+}
+
+/* 时间标签 */
+.time-tag {
+    background: rgba(0, 153, 166, 0.1);
+    color: var(--tsinghua-purple);
+    padding: 0.5rem 1.2rem;
+    border-radius: calc(var(--radius-base) - 2px);
+    flex-shrink: 0;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-tag::before {
+    content: "🕒";
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+@media (max-width: 768px) {
+    .announcement-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    .time-tag {
+        background: none;
+        padding: 0;
+        margin-left: 0;
+        align-self: center;
+        width: 100%; /* 新增 */
+        justify-content: flex-end; /* 新增 */
+        display: flex; /* 确保flex布局 */
+    }
+    
+    .time-tag time {
+        background: rgba(0, 153, 166, 0.1);
+        padding: 0.3rem 0.8rem;
+        border-radius: 4px;
+        display: inline-block;
+        margin-left: auto; /* 新增 */
+    }
+    
+    .time-tag::before {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .time-tag time {
+        font-size: 0.9rem;
+    }
+}
+
+/* 交互效果 */
+.announcement-link:hover {
+    transform: translateY(-2px);
+}
