@@ -15362,7 +15362,3 @@ var __webpack_exports__PDFViewerApplicationOptions = __webpack_exports__.PDFView
 export { __webpack_exports__PDFViewerApplication as PDFViewerApplication, __webpack_exports__PDFViewerApplicationConstants as PDFViewerApplicationConstants, __webpack_exports__PDFViewerApplicationOptions as PDFViewerApplicationOptions };
 
 //# sourceMappingURL=viewer.mjs.map
-
-//移除下载的功能按钮//
-document.getElementById("downloadButton").style.display = "none";
-document.getElementById("printButton").style.display = "none";
