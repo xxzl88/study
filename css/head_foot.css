@@ -37,7 +37,6 @@
   .header-qrcode {
     width: clamp(50px, 6vw, 70px);
     height: clamp(50px, 6vw, 70px);
-    border-radius: var(--radius-base);
     border: 1px solid rgba(255,255,255,0.3);
   }
   @media (max-width: 768px) {
