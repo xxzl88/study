@@ -8,8 +8,8 @@ class Watermark {
     
     // 配置参数
     this.config = {
-      screenOpacity: 0.15,   // 屏幕显示透明度
-      printOpacity: 0.25,     // 打印透明度
+      screenOpacity: 0.1,   // 屏幕显示透明度
+      printOpacity: 0.15,     // 打印透明度
       fontSize: 16,          // 基准字号
       spacing: 350           // 水印间距
     };
