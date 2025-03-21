@@ -833,7 +833,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "./document_pdf_1001_start/1005.pdf",//修改pdf的话主要修改这里就可以了
+    value: "./document_pdf_1001_start/20240609_大学生健康教育教材索引.pdf",//修改pdf的话主要修改这里就可以了
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
