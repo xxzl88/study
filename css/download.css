@@ -1,0 +1,90 @@
+/* 简约版文件列表提示 */
+.file-list-notice {
+    max-width: 1200px;  /* 替代固定width增强响应性 */
+    width: 100%;
+    background: #f0fafb;  /* 更浅的背景提升对比度 */
+    border-left: 3px solid #0099a6;  /* 细化边框 */
+    padding: 12px 20px;  /* 减少内间距 */
+    margin: 16px auto;    /* 调整外间距 */
+    border-radius: 4px;   /* 更小的圆角 */
+    color: #006a71;       /* 更深的文字颜色 */
+    font-size: 14px;      /* 更合适的字号 */
+    letter-spacing: 0.3px; /* 增加字间距 */
+  }
+  
+  .file-list-notice::before {
+    content: "📌";        /* 改用更简洁的图钉图标 */
+    margin-right: 10px;
+    font-size: 16px;      /* 缩小图标尺寸 */
+    opacity: 0.8;         /* 降低图标透明度 */
+  }
+
+/* 文件项容器 */
+.file-item {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  padding: 14px 24px;
+  margin: 8px auto;
+  background: #e6f7f9;
+  border: 2px solid #80d0d6;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+/* 文件编号 */
+.file-number {
+  background: #ffffff;
+  color: #007c87;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 20px;
+  border: 1px solid rgba(0,153,166,0.2);
+  box-shadow: 0 2px 4px rgba(0,153,166,0.1);
+}
+
+/* 文件名 */
+.file-name {
+  color: #0099a6;
+  font-size: 17px;
+  font-weight: 500;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 悬停效果 */
+.file-item:hover {
+  background: #c2ebee;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,153,166,0.15);
+}
+
+.file-item:hover .file-number {
+  background: #f5f5f5;
+}
+
+.file-item:hover .file-name::after {
+  transform: translateY(2px);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .file-list-notice,
+  .file-item {
+    max-width: 95%;
+    padding: 12px 16px;
+  }
+  
+  .file-number {
+    padding: 6px 12px;
+    margin-right: 12px;
+  }
+  
+  .file-name {
+    font-size: 15px;
+  }
+}
