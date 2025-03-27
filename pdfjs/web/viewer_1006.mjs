@@ -833,7 +833,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "./document_pdf_1001_start/1006.pdf",//修改pdf的话主要修改这里就可以了
+    value: "./document_pdf_1001_start/2023版马原学习资料_20230615_qq718123472_仅供学习，请勿转卖.pdf",//修改pdf的话主要修改这里就可以了
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
