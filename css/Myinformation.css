@@ -1,20 +1,16 @@
-/* 容器优化 */
-.about-container {
-    width: 100%; /* 改为百分比宽度 */
-    max-width: 1200px; /* 保持最大宽度限制 */
+/* 分栏容器 */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
     margin: 2rem auto;
-    padding: 2rem;
-    background: #f7fbfc;
-    border: 1px solid #007a8a33; /* 降低边框透明度 */
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 40px;
-    box-shadow: 0 4px 20px rgba(0,122,138,0.06);
+    padding: 0 32px;
+    gap: 60px;
 }
-/* 左侧栏精准对齐系统 */
+
+/* 左侧栏系统 */
 .about-me {
-    position: relative;
+    flex: 0 1 250px;
     padding-right: 40px;
     border-right: 2px solid #9cf0ff;
     display: grid;
@@ -22,7 +18,6 @@
     gap: 2rem;
 }
 
-/* 头像区域垂直对齐 */
 .avatar-box {
     text-align: center;
     margin: 0 auto;
@@ -39,21 +34,19 @@
     overflow: hidden;
 }
 
-/* 联系方式网格系统 */
+/* 联系信息网格 */
 .contact-info {
     display: grid;
     grid-template-columns: 24px 1fr;
     align-items: center;
     gap: 12px 16px;
     padding: 0 1rem;
-    margin: 0;
 }
 
 .contact-info p {
-    display: contents; /* 突破p标签限制 */
+    display: contents;
 }
 
-/* 图标精准定位 */
 .contact-info p::before {
     content: "•";
     color: #ff6f00;
@@ -62,24 +55,24 @@
     grid-column: 1;
 }
 
-/* 文字区块控制 */
 .contact-info span {
     grid-column: 2;
     white-space: nowrap;
 }
 
-/* 链接优化方案 */
+/* 链接优化 */
 .site-links {
-    display: flex; /* 改用flex布局 */
+    display: flex;
     gap: 10px;
-    flex-wrap: nowrap; /* 禁止换行 */
+    flex-wrap: nowrap;
+    margin-top: 1.5rem;
 }
 
 .site-links a {
-    position: relative; /* 新增：为伪元素创建定位上下文 */
-    user-select: none;  /* 新增：防止文字被选中 */
-    flex: 1 0 auto; /* 保持最小内容宽度 */
-    min-width: 120px; /* 根据图片文字长度设置 */
+    position: relative;
+    user-select: none;
+    flex: 1 0 auto;
+    min-width: 120px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -91,146 +84,364 @@
     color: #ff6f00;
     text-decoration: none;
     font-weight: 500;
-    white-space: nowrap; /* 禁止文字换行 */
+    white-space: nowrap;
     transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 .site-links a:hover {
-    background: #ff9f4d; /* 悬停填充橙色 */
+    background: #ff9f4d;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255,159,77,0.2);
 }
 
-/* 适配图片中的网格间距 */
-.site-links a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg, rgba(255,255,255,0.2) 0%, transparent 50%);
-    opacity: 0;
-    transition: opacity 0.3s;
+/* 轮播图系统 */
+.simple-banner {
+    flex: 1;
+    position: relative;
 }
 
-.site-links a:hover::after {
-    opacity: 1;
+.carousel {
+    position: relative;
+    height: 462px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-/* 右侧卡片对齐系统 */
+
+.natural-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease, transform 0.6s ease-in-out;
+    transform: translateX(100%);
+}
+
+.natural-image.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 导航按钮优化 */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    background: linear-gradient(135deg, #4a90e2 0%, #6c5ce7 100%);
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    transform: rotate(-135deg);
+    margin-left: 2px;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+.next::before { transform: rotate(45deg); }
+
+/* 指示器系统 */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255,255,255,0.9);
+}
+
+.dot.active {
+    background: #ff4757;
+    transform: scale(1.4);
+    border-radius: 4px;
+}
+
+/* 超大屏幕适配 (1600px+) */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+        gap: 80px;
+    }
+    
+    .carousel {
+        height: 520px;
+    }
+}
+
+/* 平板横屏适配 (1024px-1280px) */
+@media (max-width: 1280px) and (min-width: 1024px) {
+    .container {
+        gap: 40px;
+        padding: 0 48px;
+    }
+    
+    .about-me {
+        flex-basis: 280px;
+    }
+    
+    .carousel {
+        height: 420px;
+    }
+}
+
+/* 标准平板适配 (768px-1024px) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: row;
+        gap: 30px;
+        padding: 0 24px;
+    }
+    
+    .about-me {
+        flex: 0 0 220px;
+        padding-right: 25px;
+        border-right-width: 1px;
+    }
+    
+    .carousel {
+        height: 380px;
+    }
+    
+    /* 优化头像显示 */
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* 压缩链接按钮 */
+    .site-links a {
+        min-width: 100px;
+        padding: 0 12px;
+    }
+}
+
+/* 手机横屏/小平板 (480px-768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 35px;
+        padding: 0 16px;
+    }
+    
+    .about-me {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #9cf0ff;
+        padding-bottom: 1.5rem;
+    }
+    
+    .carousel {
+        height: 320px;
+        border-radius: 6px;
+    }
+    
+    /* 优化按钮布局 */
+    .carousel-btn {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .prev { left: 12px; }
+    .next { right: 12px; }
+}
+
+/* 小屏手机适配 (<=480px) */
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem auto;
+        gap: 30px;
+    }
+    
+    .carousel {
+        height: 240px;
+    }
+    
+    /* 优化联系信息 */
+    .contact-info {
+        grid-template-columns: 20px 1fr;
+        gap: 8px 12px;
+    }
+    
+    .contact-info p::before {
+        font-size: 1.5em;
+    }
+    
+    /* 链接按钮垂直排列 */
+    .site-links {
+        flex-direction: column;
+    }
+    
+    .site-links a {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* 超小屏适配 (<=320px) */
+@media (width <= 320px) {
+    .carousel {
+        height: 200px;
+    }
+    
+    .carousel-dots {
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+
+/* 紧凑布局系统 */
 .about-site {
-    display: grid;
-    gap: 1.5rem;
-    align-content: start;
+    width: 100%;
+    max-width: 1200px; /* 限制内容宽度 */
+    margin: 1.5rem auto;
+    padding: 0 1rem;
 }
 
 .info-card {
     background: white;
-    padding: 1.8rem;
-    border: 1px solid #007a8a11;
-    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0,122,138,0.08);
+    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0,122,138,0.05);
+    transition: transform 0.2s ease;
 }
 
+.info-card:hover {
+    transform: translateY(-2px);
+}
+
+/* 标题优化 */
 .info-card h4 {
-    color: #007a8a;
-    font-size: 1.1em;
+    color: #006974;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 2px solid #ff6f0033;
-    display: flex;
-    align-items: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255,111,0,0.15);
 }
 
 .info-card h4::before {
-    content: "▌";
+    content: "▸";
     color: #ff6f00;
-    margin-right: 0.8rem;
+    margin-right: 0.6rem;
     font-size: 1.1em;
 }
 
-/* 响应式优化 - 修改后版本 */
-@media (max-width: 992px) {
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 1.5rem;
-        border-radius: 8px;
+/* 紧凑列表系统 */
+.compact-list,
+.step-list {
+    list-style: none;
+    padding-left: 1.2rem;
+    margin: 0.8rem 0;
+}
+
+.compact-list li,
+.step-list li {
+    position: relative;
+    color: #4a5568;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+
+.compact-list li::before {
+    content: "•";
+    color: #ff9f4d;
+    margin-right: 0.6rem;
+    font-weight: bold;
+}
+
+.step-list {
+    counter-reset: step;
+}
+
+.step-list li::before {
+    content: counter(step);
+    counter-increment: step;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    background: #007a8a;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 0.9em;
+    margin-right: 0.8rem;
+}
+
+/* 嵌套列表 */
+.browser-list {
+    margin: 0.4rem 0 0 1.8rem;
+}
+
+.browser-list li::before {
+    content: "›";
+    color: #ff6f00;
+    margin-right: 0.5rem;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .about-site {
+        padding: 0 1rem;
     }
     
-    .about-me {
-        border: none;
-        padding: 0;
-        margin: 0 auto 1.5rem; /* 修改：增加水平居中约束 */
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* 新增：子元素横向居中 */
-        max-width: 480px; /* 新增：防止内容过度拉伸 */
+    .info-card {
+        padding: 1.2rem;
     }
-
-    .contact-info {
-        padding: 0; /* 移除安全间距 */
-        display: flex; /* 覆盖原有grid布局 */
-        flex-direction: column;
-        gap: 0.8rem;
-        width: 100%; /* 新增：填充父容器宽度 */
-    }
-
-    /* 新增：移动端联系人信息居中优化 */
-    .contact-info p {
-        display: flex;   
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    /* 新增：调整装饰符号定位 */
-    .contact-info p::before {
-        position: absolute;
-        top: -1px;
-    }
-
-    /* 新增：链接容器适配 */
-    .site-links {
-        justify-content: center; /* 新增：按钮居中排列 */
-        flex-wrap: wrap; /* 允许按钮换行 */
-        margin-top: 1rem;
-        width: 100%; /* 新增：填充可用宽度 */
-    }
-
-    /* 新增：按钮宽度优化 */
-    .site-links a {
-        flex: 0 1 calc(50% - 0.5rem); /* 弹性宽度计算 */
-        min-width: 140px; /* 更小最小宽度 */
+    
+    .compact-list li,
+    .step-list li {
+        font-size: 0.9rem;
     }
 }
 
-/* 移动端居中对齐优化 */
-@media (max-width: 576px) {
-    .contact-info {
-        text-align: center;
-        padding-left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 480px) {
+    .info-card {
+        margin-bottom: 1rem;
     }
-
-    .contact-info p::before {
-        display: none; /* 隐藏桌面端的装饰圆点 */
+    
+    .info-card h4::before {
+        margin-right: 0.4rem;
     }
-
-    .site-links {
-        width: 100%;
-        max-width: 220px; /* 根据图片中的按钮宽度设定 */
-        margin-top: 0.8rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .site-links a {
-        width: 100%;
-        padding: 0.8rem;
-        border-radius: 6px;
-        font-size: 0.95em;
-        justify-content: center;
+    
+    .step-list li::before {
+        margin-right: 0.6rem;
     }
 }
