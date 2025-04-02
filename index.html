@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/watermark.css">
     <link rel="stylesheet" href="./css/daohang.css">
     <link rel="stylesheet" href="./css/Myinformation.css">
+    <link rel="stylesheet" href="./css/dongtai.css">
+    <link rel="stylesheet" href="./css/attitude.css">
 </head>
 <body>
     <!-- 顶部导航栏 -->
@@ -39,6 +41,7 @@
           <a href="./xxzl.html" class="nav-link">学习资料</a>
         </div>
     </nav>
+
     <div class="about-container">
         <!-- 左侧：关于我 -->
         <div class="about-me">
@@ -49,14 +52,12 @@
             <div class="contact-info">
                 <p><span>QQ：718123472</span></p>
                 <p><span>邮箱：xxzl88@qq.com</span></p>
-                <p><span>个人站点</span></p>
                 <div class="site-links">
                     <a href="https://xxzl88.netlify.app">Netlify</a>
                     <a href="https://xxzl88.github.io/study">GitHub</a>
                 </div>
             </div>
         </div>
-    
         <!-- 右侧：关于网站 -->
         <div class="about-site">
             <div class="info-card">
@@ -74,7 +75,45 @@
             </div>
         </div>
     </div>
-
+    <!-- 基础图片展示 -->
+    <section class="simple-banner">
+        <img src="./img/04.png"class="natural-image">
+    </section>
+    <!-- 新增独立资讯板块 -->
+    <section class="news-section">
+        <div class="info-card news-card">
+            <h4 class="news-title">资料动态</h4>
+            <ul class="news-list">
+                <li class="news-item">
+                    <a href="/info/1006.html" class="news-link">
+                        <time>2025-03-27</time>
+                        <span>中南大学马克思主义基本原理期末真题与复习资料</span>
+                    </a>
+                </li>
+                <li class="news-item">
+                    <a href="/info/1005.html" class="news-link">
+                        <time>2025-03-27</time>
+                        <span>中南大学大学生健康教育公选课开卷教材检索资料</span>
+                    </a>
+                </li>
+                <li class="news-item">
+                    <a href="/info/1004.html" class="news-link">
+                        <time>2025-03-21</time>
+                        <span>中南大学商务英语课程期末考试开卷资料</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- 新增查看更多 -->
+            <div class="news-more">
+                <a href="/xxzl.html" class="more-link">
+                    查看更多
+                    <svg class="arrow" viewBox="0 0 24 24" width="16" height="16">
+                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- 隐藏区域暂时修改删除
     <main class="content-area">
