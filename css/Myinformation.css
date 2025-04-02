@@ -273,6 +273,20 @@
     
     .prev { left: 12px; }
     .next { right: 12px; }
+
+    .contact-info {
+        padding: 0; /* 移除内边距 */
+    }
+
+    .site-links {
+        grid-column: 1 / -1; /* 跨满整列 */
+        width: 100vw; /* 视口宽度 */
+    }
+
+    .site-links a {
+        max-width: 60vw; /* 相对视口宽度 */
+        margin: 0 auto; /* 双重居中保证 */
+    }
 }
 
 /* 小屏手机适配 (<=480px) */
@@ -294,7 +308,8 @@
     
     .contact-info p::before {
         font-size: 1.5em;
-    }/* 链接按钮优化 */
+    }
+    /* 链接按钮优化 */
     .site-links {
         flex-direction: column;
         align-items: center; /* 新增居中控制 */
@@ -302,12 +317,11 @@
     }
     
     .site-links a {
-        width: 80%; /* 相对宽度 */
+        width: 100%; /* 相对宽度 */
         max-width: 280px; /* 最大宽度限制 */
         min-width: auto;
-        padding: 10px 20px; /* 紧凑内边距 */
-        margin: 0 auto; /* 水平居中 */
-        font-size: 0.95em; /* 字号微调 */
+        flex: none; /* 禁用弹性伸缩 */
+        padding: 10px 20px; /* 优化触摸区域 */
     }
     
     /* 增强触摸体验 */
@@ -331,6 +345,13 @@
         height: 6px;
     }
 }
+
+
+
+
+
+
+
 
 
 /* 紧凑布局系统 */
