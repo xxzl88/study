@@ -294,16 +294,25 @@
     
     .contact-info p::before {
         font-size: 1.5em;
-    }
-    
-    /* 链接按钮垂直排列 */
+    }/* 链接按钮优化 */
     .site-links {
         flex-direction: column;
+        align-items: center; /* 新增居中控制 */
+        gap: 12px; /* 按钮间距优化 */
     }
     
     .site-links a {
-        width: 100%;
+        width: 80%; /* 相对宽度 */
+        max-width: 280px; /* 最大宽度限制 */
         min-width: auto;
+        padding: 10px 20px; /* 紧凑内边距 */
+        margin: 0 auto; /* 水平居中 */
+        font-size: 0.95em; /* 字号微调 */
+    }
+    
+    /* 增强触摸体验 */
+    .site-links a:active {
+        transform: scale(0.98);
     }
 }
 
