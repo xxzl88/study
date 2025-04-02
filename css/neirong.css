@@ -1,0 +1,205 @@
+/* 政策文件专用样式 */
+.policy-container {
+    width: 100%; /* 改为百分比宽度 */
+    max-width: 1200px; /* 保持最大宽度限制 */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.policy-category {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.category-title {
+    color: #007a8a;
+    border-bottom: 2px solid #007a8a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.policy-list {
+    display: grid;
+    gap: 1.5rem;
+}
+/* 面包屑导航 */
+.breadcrumb {
+    color: #666;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: #007a8a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+}
+
+
+.policy-card {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #eee; /* 保持原有边框色 */
+    background: #f0f9fb; /* 新增浅蓝色背景 */
+    border-radius: 6px;
+    padding: 1.5rem;
+    transition: all 0.3s; /* 改为全局过渡 */
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+}
+/* 卡片悬停效果 */
+.policy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 增加点击反馈效果 */
+.policy-card:active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.05);
+    border-radius: 6px;
+}
+
+/* 日期盒子样式 */
+.date-box {
+    width:100px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 年份样式 */
+.year {
+    background-color: #007a8a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+/* 月日样式 */
+.month-day {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 内容区域样式 */
+.policy-content {
+    padding: 0 10px;
+    display: flex; /* 新增 */
+    align-items: center; /* 新增 */
+    min-height: 80px; /* 根据日期盒子的高度同步调整 */
+}
+
+/* 标题样式 */
+.policy-content h3 {
+    color: #333;
+    font-size: 1.25rem;
+    margin: 0 0 15px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+
+/* 移动端适配 - 媒体查询（最大宽度768px） */
+@media (max-width: 768px) {
+    .policy-container {
+        padding: 0 0.5rem;
+    }
+
+    .policy-category {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 6px;
+    }
+
+    .category-title {
+        font-size: 1.1rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .policy-card {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 10px;
+    }
+
+    .date-box {
+        display: flex;
+        justify-content: start;
+        gap: 15px;
+        background: none;
+        padding: 0;
+    }
+
+    .year {
+        background: none;
+        color: #007a8a;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .month-day {
+        font-size: 1rem;
+        color: #ff6f00;
+    }
+
+    .policy-content {
+        min-height: auto;
+        padding: 0;
+    }
+
+    .policy-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+    }
+}
+
+/* 平板设备适配（769px - 1024px） */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .policy-container {
+        max-width: 90%;
+    }
+    
+    .policy-card {
+        grid-template-columns: 70px 1fr;
+        padding: 1.2rem;
+        gap: 15px;
+    }
+    
+    .year {
+        font-size: 1.1rem;
+    }
+        /* 面包屑导航响应式 */
+    .breadcrumb {
+        margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
+        font-size: 0.9em;
+}
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        font-size: 0.85em;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

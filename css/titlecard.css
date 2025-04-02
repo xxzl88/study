@@ -1,0 +1,167 @@
+/* 基础容器 */
+.content-area {
+    width: var(--content-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* 卡片交互优化 */
+.announcement-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.announcement {
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: var(--radius-base);
+    border: 1px solid var(--divider-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1rem;
+    transition: all 0.25s ease;
+}
+
+.announcement:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(125,42,140,0.08);
+}
+
+/* 头部智能布局 */
+.announcement-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+/* 置顶标签优化 */
+.sticky-tag {
+    order: -1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: red;
+    font-size: 0.85em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    background: rgba(125,42,140,0.06);
+}
+
+.sticky-tag svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* 标题系统 */
+.title-tag {
+    flex: 1;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.title-tag::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 2px;
+    background: var(--tsinghua-purple);
+}
+
+.title-tag h2 {
+    color: var(--tsinghua-purple);
+    font-size: clamp(1.1rem, 1.2vw + 0.6rem, 1.4rem);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin: 0;
+    /* 多行省略号配置 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 2.8em;
+}
+
+/* 时间标签 */
+.time-tag {
+    color: var(--tsinghua-purple);
+    font-size: clamp(0.85rem, 0.6vw + 0.7rem, 0.95rem);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.time-tag::before {
+    content: "🕒";
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+    .announcement {
+        padding: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .announcement-header {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .title-tag {
+        padding-left: 1rem;
+        order: 1;
+        width: 100%;
+    }
+
+    .title-tag h2 {
+        font-size: clamp(0.6rem, 4vw, 1rem);
+        line-height: 1.35;
+    }
+
+    .time-tag {
+        order: 2;
+        font-size: 0.8rem;
+    }
+
+    .sticky-tag {
+        order: 0;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-tag::before {
+        top: 10%;
+        bottom: 10%;
+    }
+
+    .title-tag h2 {
+        letter-spacing: -0.015em;
+    }
+
+    .time-tag {
+        gap: 0.2rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .title-tag h2 {
+        font-size: 0.95rem;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .time-tag {
+        font-size: 0.75rem;
+    }
+}

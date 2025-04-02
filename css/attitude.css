@@ -1,0 +1,26 @@
+/* 无裁剪图片样式 */
+.simple-banner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .natural-image {
+    width: 100%;
+    height: auto; /* 关键设置：保持原始比例 */
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* 移动端微调 */
+  @media (max-width: 768px) {
+    .simple-banner {
+      padding: 0 1rem;
+    }
+    
+    .natural-image {
+      border-radius: 6px;
+    }
+  }

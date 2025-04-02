@@ -1,0 +1,185 @@
+/* ================= 简约横线提示 ================= */
+.file-list-notice {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px 0;
+  margin: 32px auto;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.file-list-notice::before {
+  content: "※";
+  position: absolute;
+  left: -1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #909399;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.file-list-notice::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 120px;
+  height: 3px;
+  background: #0099a6;
+  transition: width 0.3s ease;
+}
+
+.file-list-notice__content {
+  display: inline-block;
+  color: #606266;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-right: 1.5em;
+  background: linear-gradient(to right, transparent 90%, white);
+  position: relative;
+  z-index: 1;
+}
+
+/* 悬停动效 */
+.file-list-notice:hover::after {
+  width: 100%;
+}
+
+.file-list-notice:hover .file-list-notice__content {
+  background: linear-gradient(to right, transparent 80%, white);
+}
+
+/* ================= 文件项容器 ================= */
+.file-item {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 96%;
+  padding: 16px 28px;
+  margin: 12px auto;
+  background: #f4fcfd;
+  border: 1px solid #b3e5eb;
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.file-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #0099a6, #80d0d6);
+  transition: width 0.3s ease;
+}
+
+/* ================= 文件编号 ================= */
+.file-number {
+  background: rgba(255,255,255,0.95);
+  color: #007c87;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-right: 24px;
+  border: 1px solid rgba(0,153,166,0.15);
+  box-shadow: 
+    0 3px 8px rgba(0,153,166,0.1),
+    inset 0 1px 2px rgba(255,255,255,0.5);
+  font-family: 'Courier New', monospace;
+  transition: transform 0.2s ease;
+}
+
+/* ================= 文件名 ================= */
+.file-name {
+  color: #004d54;
+  font-size: 16px;
+  font-weight: 500;
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.1px;
+  position: relative;
+  padding-right: 28px;
+}
+
+.file-name::after {
+  content: "→";
+  position: absolute;
+  right: 0;
+  color: #80d0d6;
+  transition: transform 0.3s ease;
+}
+
+/* ================= 悬停效果 ================= */
+.file-item:hover {
+  transform: translateY(-3px);
+  background: #e0f7fa;
+  box-shadow: 
+    0 6px 20px rgba(0,153,166,0.12),
+    inset 0 1px 2px rgba(255,255,255,0.4);
+}
+
+.file-item:hover::after {
+  width: 5px;
+}
+
+.file-item:hover .file-number {
+  transform: translateX(4px);
+  box-shadow: 
+    0 4px 12px rgba(0,153,166,0.15),
+    inset 0 1px 3px rgba(255,255,255,0.6);
+}
+
+.file-item:hover .file-name::after {
+  transform: translateX(4px);
+  color: #0099a6;
+}
+
+/* ================= 响应式设计 ================= */
+@media (max-width: 768px) {
+  .file-list-notice,
+  .file-item {
+    width: 92%;
+    padding: 14px 20px;
+    margin: 8px auto;
+  }
+
+  .file-number {
+    padding: 6px 14px;
+    margin-right: 16px;
+  }
+
+  .file-name {
+    font-size: 15px;
+    padding-right: 22px;
+  }
+
+  .file-list-notice::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .file-number {
+    display: none;
+  }
+  
+  .file-name {
+    padding-left: 28px;
+  }
+  
+  .file-name::before {
+    content: "•";
+    color: #0099a6;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
