@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./css/daohang.css">
     <link rel="stylesheet" href="./css/Myinformation.css">
     <link rel="stylesheet" href="./css/dongtai.css">
-    <link rel="stylesheet" href="./css/attitude.css">
 </head>
 <body>
     <!-- 顶部导航栏 -->
@@ -41,28 +40,7 @@
           <a href="./xxzl.html" class="nav-link">学习资料</a>
         </div>
     </nav>
-    <section class="simple-banner">
-        <div class="carousel">
-            <!-- 新增导航按钮 -->
-            <button class="carousel-btn prev">‹</button>
-            <button class="carousel-btn next">›</button>
-            
-            <!-- 原有图片结构保持不变 -->
-            <img src="./img/06.png" class="natural-image active">
-            <img src="./img/04.png" class="natural-image">
-            <a href="https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm" target="_blank">
-                <img src="./img/05.png" class="natural-image">
-            </a>
-            
-            <!-- 轮播指示器 -->
-            <div class="carousel-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-            </div>
-        </div>
-    </section>
-    <div class="about-container">
+    <div class="container">
         <!-- 左侧：关于我 -->
         <div class="about-me">
             <div class="avatar-box">
@@ -78,24 +56,53 @@
                 </div>
             </div>
         </div>
-        <!-- 右侧：关于网站 -->
-        <div class="about-site">
-            <div class="info-card">
-                <h4>网站性质</h4>
-                <p>仅供交流学习使用，未经书面授权，未经书面授权，严禁下载资料后直接或者二次修改后间接商业用途，严禁二手转卖</p>
+
+        <!-- 右侧：轮播图 -->
+        <section class="simple-banner">
+            <div class="carousel">
+                <button class="carousel-btn prev">‹</button>
+                <button class="carousel-btn next">›</button>
+                
+                <img src="./img/06.png" class="natural-image active">
+                <img src="./img/04.png" class="natural-image">
+                <a href="https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm" target="_blank">
+                    <img src="./img/05.png" class="natural-image">
+                </a>
+                
+                <div class="carousel-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
             </div>
-            <div class="info-card">
-                <h4>更新频率</h4>
-                <p>随缘更新，有新的资料就会更新，如果你想要获得哪些资料，可以邮件联系作者，有的话就会放上去</p>
-            </div>
-            <div class="info-card">
-                <h4>使用说明</h4>
-                <p>点击顶部的分栏导航区域标签，跳转到分类页面选择相应的文件浏览或者下载即可</p>
-                <p>注意：推荐使用电脑打开网站（手机版兼容性比较差），另外请优先选用Edge浏览器和Chrome浏览器访问，其他浏览器可能会出bug，网站为免费服务器，所以有时候较为卡顿，如遇长时间未显示pdf文件，请刷新后重试</p>
-            </div>
+        </section>
+    </div>
+    <div class="about-site">
+        <div class="info-card">
+            <h4>网站性质</h4>
+            <ul class="compact-list">
+                <li>仅供交流学习使用，未经书面授权，严禁下载资料后直接或者二次修改后间接商业用途</li>
+                <li>请严格遵守法律法规使用文档，文档如果存在bug也可以联系作者修复</li>
+            </ul>
+        </div>
+        
+        <div class="info-card">
+            <h4>更新频率</h4>
+            <ul class="compact-list">
+                <li>不定期更新学习资料，期末周可能会集中更新</li>
+                <li>如果您有资料需求，可以邮件联系作者，作者如果有相应资料会进行更新，更新结果将通过邮件联系告知</li>
+            </ul>
+        </div>
+        
+        <div class="info-card">
+            <h4>使用说明</h4>
+            <ul class="compact-list">
+                <li>点击顶部的分栏导航区域标签，跳转到分类页面，选择相应的文件浏览、打印或者下载</li>
+                <li>推荐使用电脑，优先选用Edge浏览器和Chrome浏览器访问网站（手机版兼容性比较差）</li>
+                <li>网站为免费服务器，所以有时候较为卡顿，如遇长时间未显示pdf文件，请刷新后重试</li>
+            </ul>
         </div>
     </div>
-
     <!-- 新增独立资讯板块 -->
     <section class="news-section">
         <div class="info-card news-card">
