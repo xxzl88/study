@@ -274,17 +274,19 @@
     .prev { left: 12px; }
     .next { right: 12px; }
 
+
     .contact-info {
         padding: 0; /* 移除内边距 */
     }
 
     .site-links {
+        margin: 0 -2rem; /* 抵消父容器padding */
+        padding: 0 3rem; /* 保持内容安全边距 */
         grid-column: 1 / -1; /* 跨满整列 */
         width: 100vw; /* 视口宽度 */
     }
-
     .site-links a {
-        max-width: 60vw; /* 相对视口宽度 */
+        max-width: 50vw; /* 相对视口宽度 */
         margin: 0 auto; /* 双重居中保证 */
     }
 }
