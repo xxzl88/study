@@ -170,6 +170,7 @@
   }
   
   .file-number {
+    width: 80px; /* 自适应宽度 */
     padding: 7px 15px;
     margin-right: 20px;
     font-size: 0.95em;
@@ -234,7 +235,7 @@
     hyphens: auto; /* 启用自动断词 */
     white-space: normal;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* 限制两行显示 */
+    -webkit-line-clamp: 3; /* 限制3行显示 */
     -webkit-box-orient: vertical;
   }
 
