@@ -112,3 +112,25 @@ document.addEventListener('DOMContentLoaded', function() {
   showImage(0);
   startCarousel();
 });
+
+
+    // 获取所有的圆点和图片
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    const images = document.querySelectorAll('.carousel img');
+
+    // 为每个圆点添加点击事件
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const index = dot.getAttribute('data-index'); // 获取点击圆点的索引
+            
+            // 移除所有图片的active类
+            images.forEach(img => img.classList.remove('active'));
+            // 为点击的图片添加active类
+            images[index].classList.add('active');
+            
+            // 移除所有圆点的active类
+            dots.forEach(d => d.classList.remove('active'));
+            // 为点击的圆点添加active类
+            dot.classList.add('active');
+        });
+    });
