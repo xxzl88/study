@@ -6,14 +6,15 @@
     max-width: 1240px;
     margin: 2.5rem auto;
     padding: 0 32px;
+    justify-content: space-between;  /* 增加此行，确保左右均等分配空间 */
 }
 
 /* 等宽卡片容器 */
 .notice-section,
-.info-section {
-    flex: 1;
+.news-section { 
+    flex: 1; /* 使左右卡片宽度相等 */
     min-width: 0;
-    width: 100%;
+    width: 48%;  /* 设置为48%，确保两者之间有间隙 */
 }
 
 /* 紧凑卡片样式 */
@@ -136,6 +137,7 @@
     --surface: #f8f9fe;
     --border: rgba(45,140,240,0.1);
 }
+
 /* 响应式布局增强 */
 @media (max-width: 1024px) {
     .dashboard-container {
@@ -143,6 +145,11 @@
         padding: 0 24px;
     }
     
+    .notice-section,
+    .news-section {
+        width: 100%;  /* 确保在屏幕较小的情况下两个板块宽度为100% */
+    }
+
     .news-card {
         padding: 1.25rem;
     }
