@@ -1,80 +1,33 @@
-/* fonts.css - 专业中文排版系统 */
-
-/* 基础段落样式 */
-p {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
-                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    margin: 0 0 1.25em;
-    text-indent: 2em; /* 中文标准首行缩进 */
-    text-align: justify; /* 两端对齐 */
-    text-justify: inter-ideograph; /* 优化中文对齐 */
-    word-spacing: -0.05em; /* 补偿对齐产生的间隙 */
-    letter-spacing: 0.02em;
-    text-rendering: optimizeLegibility;
+/* 正文部分文字格式 */
+.article-content {
+  font-size: 18px;  /* 增加字体大小，确保更好的阅读体验 */
+  line-height: 1.8; /* 设置行高为1.8，使得文本间距更舒适 */
+  text-align: justify; /* 使文字两端对齐，给人更整洁的感觉 */
+  text-indent: 2em; /* 使用em单位来确保缩进效果 */
+  color: #333;      /* 深灰色字体，易于阅读 */
+  margin-bottom: 20px; /* 每段底部留出空间，避免段落过于紧凑 */
+  font-family: "Arial", sans-serif; /* 设置字体为Arial，简洁现代 */
 }
 
-/* 首段不缩进 */
-p:first-child {
-    text-indent: 0;
+.article-content p {
+  margin: 0 0 15px; /* 每个段落的底部间距 */
+  word-wrap: break-word; /* 防止长单词或网址导致布局问题 */
+  letter-spacing: 0.5px; /* 调整字母间距，使文字更加舒展 */
 }
 
-/* 移动端适配 */
-@media screen and (max-width: 768px) {
-    p {
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 1.5em;
-        text-indent: 1.5em; /* 缩进量减少 */
-        text-align: left; /* 移动端改用左对齐 */
-        text-justify: auto; /* 禁用两端对齐 */
-        word-spacing: normal;
-    }
+/* 增加标题和小标题的样式 */
+.article-content h2 {
+  font-size: 24px;  /* 设置小标题字体较大 */
+  font-weight: bold; /* 小标题加粗 */
+  margin-top: 20px; /* 小标题与正文保持间隔 */
+  color: #1e90ff;   /* 小标题颜色改为蓝色 */
 }
 
-/* 小字号文本 */
-p.small {
-    font-size: 14px;
-    line-height: 1.5;
-    text-indent: 1.8em; /* 缩进相对增大 */
-    letter-spacing: 0.03em; /* 小字增加字距 */
-}
-
-/* 强调段落 */
-p.lead {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #4a5568;
-    margin-bottom: 1.75em;
-    text-indent: 0; /* 取消缩进 */
-    text-align: justify; /* 保持两端对齐 */
-}
-
-/* 超小屏优化 */
-@media screen and (max-width: 480px) {
-    p {
-        text-indent: 1.2em;
-        font-size: 16px; /* 保持基础可读性 */
-    }
-    
-    p.lead {
-        font-size: 17px;
-        line-height: 1.65;
-    }
-    
-    p.small {
-        text-indent: 1.5em;
-        font-size: 13px;
-    }
-}
-
-/* 打印优化 */
-@media print {
-    p {
-        text-indent: 2em;
-        text-align: justify;
-        word-spacing: -0.05em;
-    }
+/* 让引用内容（如果有）有明显的视觉区分 */
+.article-content blockquote {
+  font-style: italic; /* 设置引用文字为斜体 */
+  color: #666; /* 引用文字使用灰色 */
+  border-left: 4px solid #1e90ff; /* 左侧加上蓝色的边框，增强区分 */
+  padding-left: 15px; /* 留出空白，避免文字紧贴边框 */
+  margin-left: 0;
 }
