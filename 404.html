@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面不存在</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .error-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .error-container h1 {
+            font-size: 6em;
+            color: #ff6347;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .error-container h2 {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .error-container p {
+            font-size: 1.2em;
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f39c12;
+            animation: countdownAnimation 5s linear infinite;
+        }
+
+        .error-container button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .error-container button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #f39c12;
+        }
+
+        /* 星星动画 */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .stars span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            animation: starAnimation 2s infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countdownAnimation {
+            0% {
+                color: #f39c12;
+            }
+            50% {
+                color: #ff6347;
+            }
+            100% {
+                color: #f39c12;
+            }
+        }
+
+        @keyframes starAnimation {
+            0% {
+                transform: translateX(0) translateY(0) scale(0.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(calc(100vw * random())) translateY(calc(100vh * random())) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 星星背景 -->
+    <div class="stars">
+        <span style="top: 20%; left: 30%; animation-duration: 4s;"></span>
+        <span style="top: 60%; left: 50%; animation-duration: 5s;"></span>
+        <span style="top: 80%; left: 80%; animation-duration: 3s;"></span>
+        <span style="top: 40%; left: 70%; animation-duration: 2s;"></span>
+        <span style="top: 10%; left: 90%; animation-duration: 6s;"></span>
+        <!-- 可以加入更多的星星，改变位置和动画时间 -->
+    </div>
+
+    <div class="error-container">
+        <h1>404</h1>
+        <h2>哎呀！我们迷失了</h2>
+        <p>您访问的页面好像不见了，或者可能从未存在过。</p>
+        <p>您将被自动跳转到首页 <span class="countdown">5</span> 秒后...</p>
+        <button onclick="window.location.href = '/'">返回首页</button>
+        <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
+    </div>
+
+    <script>
+        var countdownElement = document.querySelector('.countdown');
+        var countdownTime = 5;  // 初始化倒计时时间为5秒
+        
+        var countdownInterval = setInterval(function() {
+            countdownTime--;
+            countdownElement.textContent = countdownTime;
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = '/';  // 首页路径
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
