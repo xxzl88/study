@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+            background: linear-gradient(45deg, #0099a6, #5cbed7); /* 主色系渐变背景 */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,7 +24,7 @@
 
         .error-container {
             text-align: center;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7); /* 深色背景增加对比 */
             padding: 40px 50px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
 
         .error-container h1 {
             font-size: 6em;
-            color: #ff6347;
+            color: #fff;
             font-weight: bold;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -45,14 +45,14 @@
 
         .error-container h2 {
             font-size: 2.5em;
-            color: #fff;
+            color: #f1f1f1;
             margin-bottom: 30px;
             font-weight: 400;
         }
 
         .error-container p {
             font-size: 1.2em;
-            color: #ccc;
+            color: #bbb;
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -65,7 +65,7 @@
         }
 
         .error-container button {
-            background-color: #3498db;
+            background-color: #0099a6; /* 主色系按钮 */
             color: #fff;
             padding: 12px 30px;
             font-size: 1.1em;
@@ -76,13 +76,13 @@
         }
 
         .error-container button:hover {
-            background-color: #2980b9;
+            background-color: #007a8a;
             transform: scale(1.05);
         }
 
         .footer {
             font-size: 0.9em;
-            color: #aaa;
+            color: #ccc;
             margin-top: 20px;
         }
 
@@ -94,6 +94,14 @@
 
         .footer a:hover {
             color: #f39c12;
+        }
+
+        /* 哭脸表情 */
+        .cry-face {
+            font-size: 5em;
+            color: #ff6347;
+            margin-bottom: 20px;
+            animation: cryFaceAnimation 1s ease-in-out infinite alternate;
         }
 
         /* 星星动画 */
@@ -139,6 +147,18 @@
             }
         }
 
+        @keyframes cryFaceAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         @keyframes starAnimation {
             0% {
                 transform: translateX(0) translateY(0) scale(0.5);
@@ -159,14 +179,15 @@
         <span style="top: 80%; left: 80%; animation-duration: 3s;"></span>
         <span style="top: 40%; left: 70%; animation-duration: 2s;"></span>
         <span style="top: 10%; left: 90%; animation-duration: 6s;"></span>
-        <!-- 可以加入更多的星星，改变位置和动画时间 -->
     </div>
 
     <div class="error-container">
+        <!-- 哭脸表情 -->
+        <div class="cry-face">😭</div>
         <h1>404</h1>
-        <h2>哎呀！我们迷失了</h2>
-        <p>您访问的页面好像不见了，或者可能从未存在过。</p>
-        <p>您将被自动跳转到首页 <span class="countdown">5</span> 秒后...</p>
+        <h2>哎呀！您猜怎么着儿？网页出去度假了</h2>
+        <p>您访问的页面不见了，或者可能从未存在过。</p>
+        <p><span class="countdown">5</span> 秒后您将被自动跳转到首页</p>
         <button onclick="window.location.href = '/'">返回首页</button>
         <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
     </div>
