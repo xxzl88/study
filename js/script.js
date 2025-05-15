@@ -43,3 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     });
 })
+
+
+
+// 等待文档加载完成
+document.addEventListener("DOMContentLoaded", function() {
+    // 获取所有的 policy-card 元素
+    const articles = document.querySelectorAll('.policy-card');
+    
+    // 获取文章数量并更新显示
+    const articleCount = articles.length;
+    const articleNumberElement = document.querySelector('.article-number');
+    
+    // 更新数字
+    articleNumberElement.textContent = articleCount;
+});
