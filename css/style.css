@@ -41,3 +41,16 @@ body {
     background: #6a1070;
     transform: translateX(0.5rem);
 }
+
+
+/* 设置文章数量数字的样式 */
+.article-count {
+    font-size: 1rem; /* 保持正常字体大小 */
+    color: #333; /* 正常字体颜色 */
+}
+
+.article-number {
+    font-size: 1.6rem; /* 数字变大 */
+    font-weight: 700; /* 数字加粗 */
+    color: #007a8a; /* 适配与页面颜色搭配 */
+}
