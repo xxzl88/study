@@ -61,6 +61,8 @@
         -webkit-overflow-scrolling: touch;
     }
 }
+
+
 .policy-card {
     cursor: pointer;
     position: relative;
@@ -289,9 +291,6 @@
     color: #007a8a; /* 悬停时改变标题颜色 */
 }
 @media (max-width: 768px) {
-    .policy-container {
-        padding: 0; /* 去除整体左右内边距 */
-    }
 
     .policy-card {
         display: grid;
