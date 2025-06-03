@@ -291,6 +291,62 @@
     }
 }
 
+/* 小屏手机适配 (<=480px) */
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem auto;
+        gap: 30px;
+    }
+    
+    .carousel {
+        height: 240px;
+    }
+    
+    /* 优化联系信息 */
+    .contact-info {
+        grid-template-columns: 20px 1fr;
+        gap: 8px 12px;
+    }
+    
+    .contact-info p::before {
+        font-size: 1.5em;
+    }
+    /* 链接按钮优化 */
+    .site-links {
+        flex-direction: column;
+        align-items: center; /* 新增居中控制 */
+        gap: 12px; /* 按钮间距优化 */
+    }
+    
+    .site-links a {
+        width: 100%; /* 相对宽度 */
+        max-width: 280px; /* 最大宽度限制 */
+        min-width: auto;
+        flex: none; /* 禁用弹性伸缩 */
+        padding: 10px 20px; /* 优化触摸区域 */
+    }
+    
+    /* 增强触摸体验 */
+    .site-links a:active {
+        transform: scale(0.98);
+    }
+}
+
+/* 超小屏适配 (<=320px) */
+@media (width <= 320px) {
+    .carousel {
+        height: 200px;
+    }
+    
+    .carousel-dots {
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 6px;
+        height: 6px;
+    }
+}
 
 
 
