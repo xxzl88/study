@@ -1,129 +1,209 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="/img/touxiang.jpg">
-    <title>毛概和习概期末复习笔记资料制作说明及往期获取方式 - 我的分享小站</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/head_foot.css">
-    <link rel="stylesheet" href="../css/num.css">
-    <link rel="stylesheet" href="../css/Mypdf-container.css">
-    <link rel="stylesheet" href="../css/titlecard.css">
-    <link rel="stylesheet" href="../css/articletitle.css">
-    <link rel="stylesheet" href="../css/watermark.css">
-    <link rel="stylesheet" href="../css/download.css">
-    <link rel="stylesheet" href="../css/daohang.css">
-    <link rel="stylesheet" href="../css/neirong.css">
-    <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="icon" href="/img/touxiang.jpg" type="image/x-icon">
+    <title>页面不存在</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #0099a6, #5cbed7); /* 主色系渐变背景 */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .error-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7); /* 深色背景增加对比 */
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .error-container h1 {
+            font-size: 6em;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .error-container h2 {
+            font-size: 2.5em;
+            color: #f1f1f1;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .error-container p {
+            font-size: 1.2em;
+            color: #bbb;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f39c12;
+            animation: countdownAnimation 5s linear infinite;
+        }
+
+        .error-container button {
+            background-color: #0099a6; /* 主色系按钮 */
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .error-container button:hover {
+            background-color: #007a8a;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #f39c12;
+        }
+
+        /* 哭脸表情 */
+        .cry-face {
+            font-size: 5em;
+            color: #ff6347;
+            margin-bottom: 20px;
+            animation: cryFaceAnimation 1s ease-in-out infinite alternate;
+        }
+
+        /* 星星动画 */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .stars span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: #fff;
+            animation: starAnimation 2s infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes countdownAnimation {
+            0% {
+                color: #f39c12;
+            }
+            50% {
+                color: #ff6347;
+            }
+            100% {
+                color: #f39c12;
+            }
+        }
+
+        @keyframes cryFaceAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes starAnimation {
+            0% {
+                transform: translateX(0) translateY(0) scale(0.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateX(calc(100vw * random())) translateY(calc(100vh * random())) scale(1);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- 顶部导航栏 -->
-  <header class="full-header">
-      <div class="header-container">
-        <!-- 左侧标题 -->
-        <div class="header-left"><h1>我的分享小站</h1></div>
-        <!-- 联系信息 -->
-        <div class="contact-info">
-          <div class="contact-column">
-            <!--暂时隐藏
-              <span class="contact-item">QQ718123472</span>
-            <span class="contact-item">邮箱xxzl88@qq.com</span>
-            -->
-          </div>
-        </div>
-        <!-- 右侧二维码 -->
-        <img src="../img/01.png" alt="QQ二维码" class="header-qrcode">
-      </div>
-  </header>
-  <nav class="ministerial-nav">
-    <div class="nav-inner">
-      <a href="../index.html" class="nav-link">首页</a>
-         <!-- <a href="./zcwj.html" class="nav-link">政策文件</a>-->
-      <a href="../ggxx.html" class="nav-link active">公告信息</a>
-      <a href="../xxzl.html" class="nav-link">学习资料</a>
+    <!-- 星星背景 -->
+    <div class="stars">
+        <span style="top: 20%; left: 30%; animation-duration: 4s;"></span>
+        <span style="top: 60%; left: 50%; animation-duration: 5s;"></span>
+        <span style="top: 80%; left: 80%; animation-duration: 3s;"></span>
+        <span style="top: 40%; left: 70%; animation-duration: 2s;"></span>
+        <span style="top: 10%; left: 90%; animation-duration: 6s;"></span>
     </div>
-</nav>
-<div class="policy-container">
-        <div class="breadcrumb">
-          <span>您现在的位置：</span>
-          <a href="../index.html">首页</a> &gt; <a href="../ggxx.html">公告信息</a>  &gt; 正文
-        </div>
-      <div class="protected-content" id="secureArea">
-        <div class="article-header">
-            <div class="meta-container">
-                <h1 class="article-title">毛概和习概期末复习笔记资料制作说明及往期获取方式</h1>
-                <div class="article-date">发布时间：2025-03-10</div>
-                <div class="divider"></div>
-            </div>
-        </div>
-        <div class="article-content">
-          <h1>一、往期笔记资料获取方式</h1>
-          <p>往期的学习资料主要针对了三次考试，分别情况如下，您可以通过相应获取方式<strong style="color: green;">免费获取</strong>（如果您付费获取，那你<strong style="color: red;">一定被坑了</strong>）：</p>
-          <p><strong>1.2023－2024－1 学期(2023 年秋季，2024 年 1 月考试)：只有毛概资料；</strong></p>
-          <p>获取链接（百度网盘自取）：<a href="https://pan.baidu.com/s/1u6qX7lZXx_O5G7rwFnsa4w?pwd=mpmc">https://pan.baidu.com/s/1u6qX7lZXx_O5G7rwFnsa4w?pwd=mpmc</a></p>
-          <p><strong>2.2023－2024－2 学期(2024 年春季，2024 年 6 月考试)：只有习概资料；</strong></p>
-          <p>获取链接（百度网盘自取）：<a href="https://pan.baidu.com/s/1OBPQougKpnrV2x-b9iCNRw?pwd=kgr7">https://pan.baidu.com/s/1OBPQougKpnrV2x-b9iCNRw?pwd=kgr7</a></p>
-          <p><strong>3.2024－2025－1 学期(2024 年秋季，2025 年 1 月考试)：毛概和习概资料都有。</strong></p>
-          <p>毛概获取链接（百度网盘自取）：<a href="https://pan.baidu.com/s/1kmcNHiaDB1hWv6Y4lce5wQ?pwd=a2e3">https://pan.baidu.com/s/1kmcNHiaDB1hWv6Y4lce5wQ?pwd=a2e3</a></p>
-          <p>习概获取链接（百度网盘自取）：<a href="https://pan.baidu.com/s/1dLcPjDwuSuC_2VI8pt_YVQ?pwd=jyyq">https://pan.baidu.com/s/1dLcPjDwuSuC_2VI8pt_YVQ?pwd=jyyq</a></p>
-          <h1>二、本期笔记资料制作与获取说明</h1>
-          <p>本次期末考试资料，因为重点还没画出，暂未制作，预计在倒 数第 2 个教学周（第 15 周，2025 年 5 月 26  日之后）画出后制作， 资料整理的形式、排版等类似于上述往期资料。</p>
-          <p>如果感觉资料有帮助，后续需要本次考试最新资料的话，可以关注本人联系方式：</p>
-          <p>（1）邮箱：xxzl88@qq.com</p>
-          <p>（2）QQ号：718123472</p>
-          <p>（3）个人学习资料自建网站（首选）：
-            <a href="https://study.xxzl8.top">https://study.xxzl8.top</a></p>
-          <p>（4）个人学习资料自建网站（备用）：
-            <a href="https://xxzl88.github.io/study">https://xxzl88.github.io/study</a></p>
-          <p>（5）个人学习资料自建网站（备用）：
-            <a href="https://xxzl88.netlify.app">https://xxzl88.netlify.app</a></p>
-          <p><strong style="color:red">另外如果您了解到了最新的考试重点，也可以通过上述的方式，联系作者制作资料。</strong></p>
-          <h1>三、常见问题</h1>
-          <p style="color: #0099a6;"><strong>问题1：</strong>每次考试两门课程都会有重点吗？</p>
-          <p><strong>回答：</strong>由于课程内容相对较多，根据最近的几次考试情况，一般在倒数第2个教学周会说需要重点复习的章节，所以最后的几次课非常重要！</p>
-          <p style="color: #0099a6;"><strong>问题2：</strong>今年一定会制作资料吗？</p>
-          <p><strong>回答：</strong>如果说明了考试重点，会根据重点进行制作资料。如果没有说明重点，则不会制作资料。另外可能根据我个人后期的时间安排，如果后期事情相对较多，也可能没时间专门制作资料。根据目前情况来看，大概率会制作资料。</p>
-          <p style="color: #0099a6;"><strong>问题3：</strong>如果制作了资料，资料上面的一定就会在考试试卷上体现出来？</p>
-          <p><strong>回答：</strong>考试出题具有随机性，资料不能保证上面的100%期末考试就考核，只能按照重点来制作，资料只是参考和辅助的作用。</p>
-          <p style="color: #0099a6;"><strong>问题4：</strong>往年的重点和资料是否有用？</p>
-          <p><strong>回答：</strong>一般来说，每次考试的侧重点不一样，所以没必要收购往年的复习资料。如果有时间，可以看一下最近的研究生考试真题，可能会从上面出题。</p>
-          <p style="color: #0099a6;"><strong>问题5：</strong>在知道重点之前如何复习？</p>
-          <p><strong>回答：</strong>建议对教材的基本框架和主要内容有较为明确的了解，平时多注意老师上课讲的一些关键点。选择题有一部分是教材原话挖出来，有一些则需要对基本知识有一定的了解。</p>
-        </div>
+
+    <div class="error-container">
+        <!-- 哭脸表情 -->
+        <div class="cry-face">😭</div>
+        <h1>404</h1>
+        <h2>哎呀！您猜怎么着儿？网页出去度假了</h2>
+        <p>您访问的页面不见了，或者可能从未存在过。</p>
+        <p><span class="countdown">5</span> 秒后您将被自动跳转到首页</p>
+        <button onclick="window.location.href = '/'">返回首页</button>
+        <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
     </div>
-      <!--
-        <div class="Mypdf-container"><iframe class="Mypdf" src="../pdfjs/web/viewer_1002.html"></iframe></div>
-      </div>
-      -->
-</div>
-  <style>
-    a {
-      text-decoration: none;
-      color:#0099a6;
-      }
-  </style>
-  <!-- 页脚 -->
-  <footer class="site-footer">
-    <div class="legal-info">
-        <span class="copyright">版权所有 © 2023–2025 我的分享小站</span>
-        <span class="copyright">仅供交流学习，严禁下载资料后直接或者二次修改后间接转卖</span>
-    </div>
-    <div class="legal-info">
-        <a href="https://qm.qq.com/q/5paDenVfoI" class="qq-contact">QQ: 718123472</a>
-        <span class="sep">｜</span>
-        <a href="mailto:xxzl88@qq.com" class="email-contact">xxzl88@qq.com</a>
-        <span class="sep">｜</span>
-        <a href="https://xxzl88.netlify.app" class="qq-contact">https://xxzl88.netlify.app</a>
-        <span class="sep">｜</span>
-        <a href="https://xxzl88.github.io/study" class="email-contact">https://xxzl88.github.io/study</a>
-    </div>
-  </footer>
-  <!-- 水印 -->
-  <div id="security-watermark"></div>
-  <script src="../js/script.js"></script>
-  <script src="../js/watermark.js"></script>
-  <script src="../js/protect.js"></script>
+
+    <script>
+        var countdownElement = document.querySelector('.countdown');
+        var countdownTime = 5;  // 初始化倒计时时间为5秒
+        
+        var countdownInterval = setInterval(function() {
+            countdownTime--;
+            countdownElement.textContent = countdownTime;
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = '/';  // 首页路径
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
