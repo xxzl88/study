@@ -833,7 +833,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "./document_pdf_1001_start/1009.pdf",//修改pdf的话主要修改这里就可以了
+    value: "/document/2025-06-12/中南大学马克思主义基本原理真题（6套）_参考答案_qq718123472.pdf",//修改pdf的话主要修改这里就可以了
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
