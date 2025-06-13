@@ -5191,3 +5191,20 @@ dialog :link{
     display:none;
   }
 }
+
+
+/* 额外添加的pdf始终隐藏保存和打开按钮 */
+#downloadButton,
+#secondaryDownload,
+#secondaryOpenFile {
+display: none !important;
+}
+
+/* 冗余保险：移动端也隐藏 */
+@media screen and (max-width: 768px) {
+#downloadButton,
+#secondaryDownload,
+#secondaryOpenFile {
+    display: none !important;
+}
+}
