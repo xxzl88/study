@@ -187,14 +187,14 @@
         <h1>404</h1>
         <h2>哎呀！您猜怎么着儿？网页出去度假了</h2>
         <p>您访问的页面不见了，或者可能从未存在过。</p>
-        <p><span class="countdown">15</span> 秒后您将被自动跳转到首页</p>
+        <p><span class="countdown">10</span> 秒后您将被自动跳转到首页</p>
         <button onclick="window.location.href = '/'">返回首页</button>
         <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
     </div>
 
     <script>
         var countdownElement = document.querySelector('.countdown');
-        var countdownTime = 15;  // 初始化倒计时时间为15秒
+        var countdownTime = 10;  // 初始化倒计时时间为10秒
         
         var countdownInterval = setInterval(function() {
             countdownTime--;
