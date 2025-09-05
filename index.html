@@ -115,78 +115,34 @@
             </ul>
         </div>
     </div>
-    <div class="dashboard-container">
-    <!-- 左侧通知动态 -->
-    <section class="notice-section">
-        <div class="info-card news-card">
-            <h4 class="news-title">公告动态</h4>
-            <ul class="news-list">
-                <li class="news-item">
-                    <a href="/info/2002.html" class="news-link">
-                        <time>2025-05-31</time>
-                        <span>中南大学2024-2025-2学期习概期末考试复习参考资料说明（2025年6月）</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="/info/2001.html" class="news-link">
-                        <time>2025-05-31</time>
-                        <span>中南大学2024-2025-2学期毛概期末考试复习参考资料说明（2025年6月）</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="/info/1001.html" class="news-link">
-                        <time>2025-03-09</time>
-                        <span>中华人民共和国著作权法</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="news-more">
-                <a href="/ggxx.html" class="more-link">
-                    查看更多
-                    <svg class="arrow" viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- 新增独立资讯板块 -->
-    <section class="news-section">
-        <div class="info-card news-card">
-            <h4 class="news-title">资料动态</h4>
-            <ul class="news-list">
-                <li class="news-item">
-                    <a href="https://mp.weixin.qq.com/s/z2No5ZR-1Pr-8ijteYikrw" class="news-link">
-                        <time>2025-06-15</time>
-                        <span>中南大学毛泽东思想和中国特色社会主义理论体系概论期末复习主观题参考资料（2024-2025-2学期）</span>
-                    </a>
-                </li>
-                      <li class="news-item">
-                    <a href="/info/1009.html" class="news-link">
-                        <time>2025-06-12</time>
-                        <span>中南大学马克思主义基本原理期末考试真题汇总——选择题参考答案（共6套）（2025年6月）</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="/info/1008.html" class="news-link">
-                        <time>2025-06-12</time>
-                        <span>中南大学马克思主义基本原理期末考试真题汇总（共6套）（2025年6月）</span>
-                    </a>
-                </li>
-   
-            </ul>
-            <!-- 新增查看更多 -->
-            <div class="news-more">
-                <a href="/xxzl.html" class="more-link">
-                    查看更多
-                    <svg class="arrow" viewBox="0 0 24 24" width="16" height="16">
-                        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="dashboard-container">
+  <!-- 公告动态 -->
+  <section class="notice-section">
+    <div class="info-card news-card">
+      <h4 class="news-title">公告动态</h4>
+      <ul class="news-list" id="notice-list"></ul>
+      <div class="news-more">
+        <a href="/ggxx.html" class="more-link">查看更多</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 资料动态 -->
+  <section class="news-section">
+    <div class="info-card news-card">
+      <h4 class="news-title">资料动态</h4>
+      <ul class="news-list" id="data-list"></ul>
+      <div class="news-more">
+        <a href="/xxzl.html" class="more-link">查看更多</a>
+      </div>
+    </div>
+  </section>
 </div>
+
+<!-- 引入 JS -->
+<script src="/js/loadDashboard.js"></script>
+
+
     <!-- 页脚 -->
     <footer class="site-footer">
         <div class="legal-info">
@@ -208,5 +164,7 @@
     <script src="./js/script.js"></script>
     <script src="./js/watermark.js"></script>
     <script src="./js/lunbo.js"></script>
+    <script src="./js/loadDashboard.js"></script>
+
 </body>
 </html>
