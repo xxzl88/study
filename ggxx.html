@@ -37,49 +37,16 @@
         </div>
     </nav>
 
- <!-- 新增面包屑导航 -->
- <main class="policy-container">
-    <div class="breadcrumb">
-        <span>您现在的位置：</span>
-        <a href="index.html">首页</a> &gt; 公告信息
-    </div>
-    <section class="policy-category">
-        <h2 class="category-title">
-            <span class="icon-file"></span>
-            公告信息
-            <span class="article-count">（当前页面共 <span class="article-number">2</span> 篇文章）</span> <!-- 动态文章数量 -->
-        </h2>        
-        <div class="policy-list">
-            <article class="policy-card" onclick="window.open('./info/2002.html', '_blank')">
-                <div class="date-box">
-                    <div class="year">2025</div>
-                    <div class="month-day">05-31</div>
-                </div>
-                <div class="policy-content">
-                    <h3>中南大学2024-2025-2学期习概期末考试复习参考资料说明（2025年6月）</h3>
-                </div>
-            </article>
-            <article class="policy-card" onclick="window.open('./info/2001.html', '_blank')">
-                <div class="date-box">
-                    <div class="year">2025</div>
-                    <div class="month-day">05-31</div>
-                </div>
-                <div class="policy-content">
-                    <h3>中南大学2024-2025-2学期毛概期末考试复习参考资料说明（2025年6月）</h3>
-                </div>
-            </article>
-            <article class="policy-card" onclick="window.open('./info/1001.html', '_blank')">
-                <div class="date-box">
-                    <div class="year">2025</div>
-                    <div class="month-day">03-09</div>
-                </div>
-                <div class="policy-content">
-                    <h3>中华人民共和国著作权法</h3>
-                </div>
-            </article>
-        </div>
-        
-    </section>
+<!-- 面包屑 + 公告信息列表 -->
+<main class="policy-container">
+  <div class="breadcrumb">
+    <span>您现在的位置：</span>
+    <a href="index.html">首页</a> &gt; 公告信息
+  </div>
+  <section class="policy-category">
+    <h2 class="category-title">公告信息</h2>      
+    <div class="policy-list"></div>
+  </section>
 </main>
 
 <footer class="site-footer">
@@ -102,5 +69,9 @@
     <div id="security-watermark"></div>
     <script src="./js/script.js"></script>
     <script src="./js/watermark.js"></script>
+    <script src="./js/loadList.js"></script>
+    <script>
+    renderList("ggxx");
+    </script>
 </body>
 </html>
