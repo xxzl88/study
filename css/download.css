@@ -1,0 +1,260 @@
+/* ================= 简约横线提示 ================= */
+.file-list-notice {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px 0;
+  margin: 32px auto;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.file-list-notice::before {
+  content: "※";
+  position: absolute;
+  left: -1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #909399;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.file-list-notice::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 120px;
+  height: 3px;
+  background: #0099a6;
+  transition: width 0.3s ease;
+}
+
+.file-list-notice__content {
+  display: inline-block;
+  color: #606266;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-right: 1.5em;
+  background: linear-gradient(to right, transparent 90%, white);
+  position: relative;
+  z-index: 1;
+}
+
+/* 悬停动效 */
+.file-list-notice:hover::after {
+  width: 100%;
+}
+
+.file-list-notice:hover .file-list-notice__content {
+  background: linear-gradient(to right, transparent 80%, white);
+}
+
+/* ================= 文件项容器 - 优化版 ================= */
+.file-item {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;            /* 更紧凑的容器宽度 */
+  width: 92%;
+  padding: 1rem 1.75rem;        /* 改用rem单位 */
+  margin: 0.75rem auto;
+  background: #f4fcfd;
+  border: 1px solid rgba(179,229,235,0.65); /* 半透明边框 */
+  border-radius: 6px;           /* 减少圆角幅度 */
+  text-decoration: none !important;
+  transition: 
+    transform 0.25s ease-out,
+    box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), /* 多重过渡动画 */
+    background 0.2s linear;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px -2px rgba(0,153,166,0.05); /* 新的底阴影 */
+}
+
+/* ================= 装饰边线 ================= */
+.file-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;                  /* 更纤细的边线 */
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(0,153,166,0.6),     /* 降低渐变对比度 */
+      rgba(128,208,214,0.4)
+    );
+  transition: 
+    height 0.4s ease 0.1s,     /* 添加缓存延迟 */
+    opacity 0.3s linear;
+  opacity: 0.85;               /* 增加透明度 */
+}
+
+/* ================= 悬停状态 ================= */
+.file-item:hover {
+  transform: translateY(-2px); /* 减少移动幅度 */
+  background: #e8fafc;
+  border-color: rgba(179,229,235,0.9);
+  box-shadow: 
+    0 4px 16px -3px rgba(0,153,166,0.12),
+    inset 0 0 8px rgba(255,255,255,0.4);
+}
+
+.file-item:hover::after {
+  height: 110%;                /* 动态增长效果 */
+  opacity: 1;
+}
+
+/* ================= 文件编号 - 优化版 ================= */
+.file-number {
+  background: rgba(255,255,255,0.98); /* 提高背景不透明度 */
+  color: #006a75;                    /* 加深主色提升对比度 */
+  padding: 0.5rem 1.25rem;            /* 改用rem相对单位 */
+  border-radius: 4px;                /* 微调圆角弧度 */
+  font-weight: 600;
+  margin-right: 1.5rem;              /* rem单位 */
+  border: 1px solid rgba(0,153,166,0.1); /* 降低边框透明度 */
+  box-shadow: 
+    0 2px 6px -1px rgba(0,153,166,0.08), /* 简化阴影效果 */
+    inset 0 1px 1px rgba(255,255,255,0.7); /* 柔化内阴影 */
+  font-family: system-ui, -apple-system, sans-serif; /* 现代字体栈 */
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.3s ease,           /* 添加阴影过渡 */
+    color 0.15s linear;             /* 颜色过渡 */
+  will-change: transform;           /* 优化动画性能 */
+  letter-spacing: -0.02em;          /* 微调字距 */
+  min-width: 3.8em;                 /* 确保编号对齐 */
+  text-align: center;               /* 文字居中 */
+}
+/* ================= 文件名 - 优化版 ================= */
+.file-name {
+  color: #004d54;                /* 保持深青色调 */
+  font-size: 1rem;               /* 改用相对单位 */
+  font-weight: 500;
+  flex: 1 1 auto;                /* 增强flex容器的适应性 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.02em;       /* 改用相对单位 */
+  position: relative;
+  padding-right: 2.5em;          /* 增加箭头间距 */
+  line-height: 1.4;              /* 增加行高提升可读性 */
+  min-width: 0;                  /* 修复flex溢出问题 */
+  transition: color 0.2s ease;   /* 添加颜色过渡效果 */
+}
+
+/* ================= 箭头指示器 ================= */
+.file-name::after {
+  content: "›";                  /* 改用更现代的符号 */
+  position: absolute;
+  right: 0.5em;                  /* 微调定位 */
+  top: 50%;
+  transform: translateY(-50%);   /* 垂直居中 */
+  color: #80d0d6;
+  font-size: 1.2em;              /* 适当放大 */
+  font-weight: 700;              /* 加粗显示 */
+  transition: 
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    color 0.2s ease;             /* 拆分过渡效果 */
+  will-change: transform;        /* 优化动画性能 */
+}
+
+/* ================= 多设备响应式优化 ================= */
+/* 平板设备 (769px-1024px) */
+@media (max-width: 1024px) {
+  .file-item {
+    max-width: 90%;
+    padding: 14px 24px;
+    margin: 10px auto;
+  }
+  
+  .file-number {
+    width: 80px; /* 自适应宽度 */
+    padding: 7px 15px;
+    margin-right: 20px;
+    font-size: 0.95em;
+  }
+  
+  .file-name {
+    font-size: 15px;
+    padding-right: 24px;
+  }
+}
+
+/* 中等手机 (481px-768px) */
+@media (max-width: 768px) {
+  .file-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+    border-radius: 6px;
+  }
+
+  .file-number {
+    width: auto; /* 自适应宽度 */
+    margin: 0 0 12px 0;
+    padding: 8px 16px;
+    box-shadow: 
+      0 2px 6px rgba(0,153,166,0.05),
+      inset 0 1px 2px rgba(255,255,255,0.4);
+  }
+
+  .file-name {
+    width: 100%;
+    font-size: 15px;
+        hyphens: auto; /* 启用自动断词 */
+    line-height: 1.5;
+    padding-right: 0;
+  }
+
+  .file-name::after {
+    display: inline-block; /* 改为行内显示 */
+    position: static;
+    margin-left: 8px;
+    transform: none !important;
+  }
+}
+
+/* 小屏手机 (≤480px) */
+@media (max-width: 480px) {
+  .file-item {
+    width: 88%;
+    padding: 12px 16px;
+    margin: 8px auto;
+  }
+  
+  .file-number {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+  
+  .file-name {
+    font-size: 14px;
+    hyphens: auto; /* 启用自动断词 */
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 限制3行显示 */
+    -webkit-box-orient: vertical;
+  }
+
+  .file-name::after {
+    margin-left: 6px;
+    font-size: 1.1em;
+  }
+}
+
+/* 横屏模式适配 */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .file-item {
+    max-width: 700px;
+  }
+  
+  .file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+  }
+}

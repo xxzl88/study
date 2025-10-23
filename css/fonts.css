@@ -1,0 +1,85 @@
+/* 正文部分文字格式 */
+.article-content {
+  font-size: 18px;  /* 增加字体大小，确保更好的阅读体验 */
+  line-height: 1.8; /* 设置行高为1.8，使得文本间距更舒适 */
+  text-align: justify; /* 使文字两端对齐，给人更整洁的感觉 */
+  text-indent: 2em; /* 使用em单位来确保缩进效果 */
+  color: #333;      /* 深灰色字体，易于阅读 */
+  margin-bottom: 20px; /* 每段底部留出空间，避免段落过于紧凑 */
+  font-family: "Arial", sans-serif; /* 设置字体为Arial，简洁现代 */
+}
+
+.article-content p {
+  margin: 0 0 15px; /* 每个段落的底部间距 */
+  word-wrap: break-word; /* 防止长单词或网址导致布局问题 */
+  letter-spacing: 0.5px; /* 调整字母间距，使文字更加舒展 */
+}
+
+/* 增加标题和小标题的样式 */
+.article-content h2 {
+  font-size: 24px;  /* 设置小标题字体较大 */
+  font-weight: bold; /* 小标题加粗 */
+  margin-top: 20px; /* 小标题与正文保持间隔 */
+  color: #1e90ff;   /* 小标题颜色改为蓝色 */
+}
+
+/* 让引用内容（如果有）有明显的视觉区分 */
+.article-content blockquote {
+  font-style: italic; /* 设置引用文字为斜体 */
+  color: #666; /* 引用文字使用灰色 */
+  border-left: 4px solid #1e90ff; /* 左侧加上蓝色的边框，增强区分 */
+  padding-left: 15px; /* 留出空白，避免文字紧贴边框 */
+  margin-left: 0;
+}
+/* 设置 h1 和 h2 样式 */
+.article-content h1, h2 {
+  text-indent: 0em; /* 使用em单位来确保缩进效果 */
+  font-size: 1.5rem;
+  font-family: 'Arial', sans-serif; /* 使用现代、简洁的字体 */
+  font-weight: bold; /* 加粗文字 */
+  margin-top: 20px; /* 为标题提供空间 */
+  margin-bottom: 15px; /* 让标题与其他内容有适当的间距 */
+  text-align: left; /* 左对齐 */
+  line-height: 1.4; /* 合适的行高 */
+  padding: 10px 15px; /* 适当的内边距，使标题不显得过于紧凑 */
+  border-left: 4px solid var(--tsinghua-purple); /* 通过左侧的色块突出标题 */
+  background-color: rgba(0, 153, 166, 0.1); /* 背景色，给标题增加一点深度 */
+  color: var(--tsinghua-purple); /* 使用主色系作为字体颜色 */
+}
+
+/* 整体样式 */
+.exam-details {
+  text-indent: 0em; /* 使用em单位来确保缩进效果 */
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333; /* 深灰色字体，易于阅读 */
+  margin-top: 1.5rem;
+  background-color: #e0f7f8; /* 使用主色系的浅色背景 */
+  padding: 1rem; /* 内边距确保内容不会紧贴边缘 */
+  border-radius: 10px; /* 圆角效果 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 微妙的阴影效果 */
+}
+
+.exam-item {
+  margin-bottom: 0.25rem; /* 每项内容之间的间距 */
+}
+
+.exam-item strong {
+  font-size: 18px; /* 设置题型的字体较大 */
+  color: #0099a6; /* 使用主色系 */
+  display: block; /* 强调题型的块级展示 */
+  margin-bottom: 0.25rem; /* 题型与章节之间留出间距 */
+}
+
+.exam-item ul {
+  padding-left: 0; /* 去除左侧内边距 */
+  list-style-type: disc; /* 使用圆点列表 */
+  margin-top: 0; /* 去除列表上方的默认间距 */
+}
+
+.exam-item li {
+  font-size: 16px;
+  margin-bottom: 0.5rem; /* 每个章节的间距 */
+  list-style-position: inside; /* 确保圆点与文字靠近 */
+  padding-left: 0; /* 去除缩进 */
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的分享小站</title>
+    <base href="./" />
+    <link rel="stylesheet" href="css_new/head_foot.css">
+    <link rel="stylesheet" href="css_new/nav.css">
+    <link rel="stylesheet" href="css_new/head.css">
+    <link rel="stylesheet" href="css_new/foot.css">
+    <link rel="stylesheet" href="css_new/print_foot.css">
+    <link rel="stylesheet" href="css_new/style.css">
+    <link rel="stylesheet" href="css_new/lunbo.css">
+    <link rel="stylesheet" href="css_new/index_dongtai.css">
+</head>
+
+<body data-page="index">
+    <!-- 动态加载的 header -->
+    <div id="header"></div>
+    <!-- 动态加载的 nav -->
+    <div id="nav"></div>
+
+    <section class="simple-banner">
+        <div class="carousel">
+            <!-- 按钮 -->
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
+
+            <!-- 图片，可用 a 包裹跳转 -->
+            <img src="img/06.png" class="carousel-image active" alt="图片1">
+            <a href="index.html" target="_blank">
+                <img src="img/07.png" class="carousel-image" alt="图片2">
+            </a>
+            <img src="img/04.png" class="carousel-image" alt="图片3">
+            <a href="https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm" target="_blank">
+                <img src="img/05.png" class="carousel-image" alt="图片4">
+            </a>
+
+            <!-- 小点 -->
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="dashboard-container">
+        <!-- 公告动态 -->
+        <section class="notice-section">
+            <div class="info-card news-card">
+                <h4 class="news-title">公告动态</h4>
+                <ul class="news-list" id="notice-list"></ul>
+                <div class="news-more">
+                    <a href="ggxx" class="more-link">查看更多</a>
+                </div>
+            </div>
+        </section>
+        <!-- 资料动态 -->
+        <section class="news-section">
+            <div class="info-card news-card">
+                <h4 class="news-title">资料动态</h4>
+                <ul class="news-list" id="data-list"></ul>
+                <div class="news-more">
+                    <a href="xxzl" class="more-link">查看更多</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 动态加载的 footer -->
+    <div id="footer"></div>
+    <!-- js汇总 -->
+    <script src="js_components/common.js"></script>
+    <script src="js_components/loadDashboard.js"></script>
+    <script src="js_components/lunbo.js"></script>
+    <script src="js_components/load_footer.js"></script>
+</body>
+
+</html>

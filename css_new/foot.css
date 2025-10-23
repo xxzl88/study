@@ -1,0 +1,117 @@
+/* ================= 页脚样式优化 ================= */
+.site-footer {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 1.5rem 0;
+  color: var(--text-white);
+  font-size: 0.9em;
+  text-align: center;
+  background: rgba(0, 153, 166, 1);
+  /* 使用主色10%透明度 */
+  border-top: 1px solid rgba(0, 153, 166, 0.2);
+}
+
+.legal-info {
+  margin-bottom: 0.1rem;
+  color: var(--text-light);
+}
+
+.sep {
+  margin: 0 0rem;
+  color: white;
+  font-weight: 100;
+}
+
+a.qq-contact,
+a.email-contact {
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.pci-info {
+  font-size: 0.8em;
+  transition: opacity var(--transition);
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 0;
+    background: rgba(0, 153, 166, 0.95);
+    /* 更深的背景增强可读性 */
+  }
+
+  .legal-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    font-size: 0.8em;
+  }
+
+  .sep {
+    display: none;
+    /* 移动端隐藏竖线分隔符 */
+  }
+
+
+  .pci-info {
+    margin-top: 0.5rem;
+    font-size: 0.7em;
+    line-height: 1.4;
+  }
+
+  /* 移动端超链接交互优化 */
+  a.qq-contact:hover,
+  a.email-contact:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* 下划线动画调整 */
+  a.qq-contact::after,
+  a.email-contact::after {
+    bottom: -1px;
+    height: 2px;
+    /* 更醒目的指示线 */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 0;
+    background: rgba(0, 153, 166, 0.95); /* 更深的背景增强可读性 */
+  }
+
+  .legal-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    font-size: 0.8em;
+  }
+
+  .sep {
+    display: none; /* 移动端隐藏竖线分隔符 */
+  }
+
+
+  .pci-info {
+    margin-top: 0.5rem;
+    font-size: 0.7em;
+    line-height: 1.4;
+  }
+
+  /* 移动端超链接交互优化 */
+  a.qq-contact:hover,
+  a.email-contact:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  /* 下划线动画调整 */
+  a.qq-contact::after,
+  a.email-contact::after {
+    bottom: -1px;
+    height: 2px; /* 更醒目的指示线 */
+  }
+}
