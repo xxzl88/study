@@ -88,44 +88,8 @@
   background-color: rgba(0, 153, 166, 0.1);
   color: var(--tsinghua-purple);
 }
+
 
-/* 考试详情样式 */
-.exam-details {
-  text-indent: 0;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #333;
-  margin-top: 1.5rem;
-  background-color: #e0f7f8;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* 考试项样式 */
-.exam-item {
-  margin-bottom: 0.25rem;
-}
-
-.exam-item strong {
-  font-size: 18px;
-  color: #0099a6;
-  display: block;
-  margin-bottom: 0.25rem;
-}
-
-.exam-item ul {
-  padding-left: 0;
-  list-style-type: disc;
-  margin-top: 0;
-}
-
-.exam-item li {
-  font-size: 16px;
-  margin-bottom: 0.5rem;
-  list-style-position: inside;
-  padding-left: 0;
-}
 /* ================================
    📱 响应式优化（小屏幕字体缩放）
    ================================ */
@@ -139,19 +103,13 @@
 
   .article-content h2 {
     font-size: 22px;
-  }
-
-  .exam-details {
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 0.8rem;
-  }
+  }
 }
 
 /* 手机端（≤768px） */
 @media screen and (max-width: 768px) {
   .article-content {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.55;
   }
 
@@ -165,41 +123,8 @@
     font-size: 18px;
     padding: 8px 12px;
     line-height: 1.4;
-  }
-
-  .exam-details {
-    font-size: 15px;
-    line-height: 1.6;
-    padding: 0.6rem;
-  }
-
-  .exam-item li {
-    font-size: 15px;
-  }
-}
-
-/* 超小屏幕（≤480px） */
-@media screen and (max-width: 480px) {
-  .article-content {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .article-content h2 {
-    font-size: 17px;
-  }
-
-  .exam-details {
-    font-size: 14px;
-    line-height: 1.5;
-    padding: 0.5rem;
-  }
-}
-
-
-
-
-
+  }
+}
 
 
 
