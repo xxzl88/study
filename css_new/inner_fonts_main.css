@@ -125,7 +125,23 @@
     line-height: 1.4;
   }
 }
+/* 超小屏幕（≤480px） */
+@media screen and (max-width: 480px) {
+  .article-content {
+    font-size: 15px;
+    line-height: 1.5;
+  }
 
+  .article-content h2 {
+    font-size: 17px;
+  }
+
+  .exam-details {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0.5rem;
+  }
+}
 
 
 
