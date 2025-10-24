@@ -14,12 +14,12 @@ async function loadComponent(selector, filePath, callback) {
 // 页面加载完毕后执行
 window.addEventListener("DOMContentLoaded", () => {
     // 加载头部、导航、页脚
-    loadComponent("#header", "/components/header.html");
-    loadComponent("#nav", "/components/nav.html", () => {
+    loadComponent("#header", "components/header.html");
+    loadComponent("#nav", "components/nav.html", () => {
         setActiveNav();      // 设置当前页面高亮
         initMenuToggle();    // 绑定菜单按钮点击事件
     });
-    loadComponent("#footer", "/components/footer.html");
+    loadComponent("#footer", "components/footer.html");
 });
 
 // 根据页面自动设置active状态
