@@ -15,7 +15,7 @@ async function loadDashboard() {
           const [year, month, day] = item.date.split("-");
           return `
             <li class="news-item">
-              <a href="${item.url}" class="news-link" target="_blank" style="display:flex;align-items:center;">
+              <a href="${item.url}" class="news-link" style="display:flex;align-items:center;">
                 <time style="display:flex;flex-direction:column;text-align:center;margin-right:8px;flex-shrink:0;">
                   <div style="color:#0099a6;font-weight:bold;font-size:1.1em;">${year}</div>
                   <div style="color:#555;font-size:0.85em;">${month}-${day}</div>
@@ -40,7 +40,7 @@ async function loadDashboard() {
           const [year, month, day] = item.date.split("-");
           return `
             <li class="news-item">
-              <a href="${item.url}" class="news-link" target="_blank" style="display:flex;align-items:center;">
+              <a href="${item.url}" class="news-link" style="display:flex;align-items:center;">
                 <time style="display:flex;flex-direction:column;text-align:center;margin-right:8px;flex-shrink:0;">
                   <div style="color:#0099a6;font-weight:bold;font-size:1.1em;">${year}</div>
                   <div style="color:#555;font-size:0.85em;">${month}-${day}</div>
