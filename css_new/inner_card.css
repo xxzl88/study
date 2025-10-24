@@ -1,0 +1,411 @@
+/* 政策文件专用样式 */
+.policy-container {
+    width: 100%; /* 改为百分比宽度 */
+    max-width: 1200px; /* 保持最大宽度限制 */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.policy-category {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.category-title {
+    color: #007a8a;
+    border-bottom: 2px solid #007a8a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.policy-list {
+    display: grid;
+    gap: 1rem; /* 保持适中的间距 */
+    grid-template-columns: repeat(2, 1fr); /* 每行显示两个卡片 */
+}
+
+/* 移动端适配 - 每行一个卡片 */
+@media (max-width: 768px) {
+    .policy-list {
+        grid-template-columns: 1fr; /* 每行显示一个卡片 */
+    }
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    color: #666;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: #007a8a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        font-size: 0.85em;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+.policy-card {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #e0e7ed; /* 轻微淡边框 */
+    background: #f8fbfd; /* 轻柔蓝色背景 */
+    border-radius: 8px;
+    padding: 1.3rem;
+    transition: all 0.3s ease-in-out; /* 流畅过渡 */
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px; /* 更紧凑的间距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 微弱阴影 */
+}
+
+/* 卡片悬停效果 */
+.policy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 点击反馈效果 */
+.policy-card:active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* 日期盒子样式 */
+.date-box {
+    display: flex;
+    flex-direction: column; /* 让年和月日分别在两行显示 */
+    justify-content: center;
+    align-items: center;
+    background-color: #e5f4f6; /* 轻柔的淡蓝绿色背景 */
+    border-radius: 8px;
+    padding: 10px 12px;
+    gap: 6px;
+    color: #007a8a; /* 深蓝绿色字体 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 微弱阴影 */
+}
+
+/* 年份样式 */
+.year {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007a8a; /* 清新的深蓝绿色 */
+    margin-bottom: 0;
+}
+
+/* 月日样式 */
+.month-day {
+    font-size: 1.3rem;
+    color: #ff6f00; /* 明亮的橙色 */
+    font-weight: 600;
+}
+
+/* 内容区域样式 */
+.policy-content {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    min-height: 80px;
+}
+
+/* 标题样式 */
+.policy-content h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.policy-content h3:hover {
+    color: #007a8a; /* 悬停时改变标题颜色 */
+}
+/* 政策文件专用样式 */
+.policy-container {
+    width: 100%; /* 改为百分比宽度 */
+    max-width: 1200px; /* 保持最大宽度限制 */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.policy-category {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.category-title {
+    color: #007a8a;
+    border-bottom: 2px solid #007a8a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.policy-list {
+    display: grid;
+    gap: 1rem; /* 保持适中的间距 */
+    grid-template-columns: repeat(2, 1fr); /* 每行显示两个卡片 */
+}
+
+/* 移动端适配 - 每行一个卡片 */
+@media (max-width: 768px) {
+    .policy-list {
+        grid-template-columns: 1fr; /* 每行显示一个卡片 */
+    }
+}
+
+/* 面包屑导航 */
+.breadcrumb {
+    color: #666;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: #007a8a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #ff6f00;
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        font-size: 0.85em;
+        white-space: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+.policy-card {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #e0e7ed; /* 轻微淡边框 */
+    background: #f8fbfd; /* 轻柔蓝色背景 */
+    border-radius: 8px;
+    padding: 1.3rem;
+    transition: all 0.3s ease-in-out; /* 流畅过渡 */
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px; /* 更紧凑的间距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 微弱阴影 */
+}
+
+/* 卡片悬停效果 */
+.policy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 点击反馈效果 */
+.policy-card:active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* 日期盒子样式 */
+.date-box {
+    display: flex;
+    flex-direction: column; /* 让年和月日分别在两行显示 */
+    justify-content: center;
+    align-items: center;
+    background-color: #e5f4f6; /* 轻柔的淡蓝绿色背景 */
+    border-radius: 8px;
+    padding: 10px 12px;
+    gap: 6px;
+    color: #007a8a; /* 深蓝绿色字体 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 微弱阴影 */
+}
+
+/* 年份样式 */
+.year {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #007a8a; /* 清新的深蓝绿色 */
+    margin-bottom: 0;
+}
+
+/* 月日样式 */
+.month-day {
+    font-size: 1.3rem;
+    color: #ff6f00; /* 明亮的橙色 */
+    font-weight: 600;
+}
+
+/* 内容区域样式 */
+.policy-content {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    min-height: 80px;
+}
+
+/* 标题样式 */
+.policy-content h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.policy-content h3:hover {
+    color: #007a8a; /* 悬停时改变标题颜色 */
+}
+@media (max-width: 768px) {
+
+    .policy-card {
+        display: grid;
+        grid-template-columns: 1fr; /* 单列布局 */
+        width: 100%; /* 占满整行 */
+        padding: 0.8rem 0.6rem; /* 更紧凑的内边距，左右小一点 */
+        margin: 0; /* 不要外边距 */
+        box-sizing: border-box;
+        gap: 6px; /* 元素间距紧凑 */
+    }
+
+    .date-box {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .year {
+        font-size: 1rem;
+        color: #007a8a;
+    }
+
+    .month-day {
+        font-size: 1.2rem;
+        color: #ff6f00;
+    }
+
+    .policy-content {
+        padding: 0;
+    }
+
+    .policy-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+}
+
+@media print {
+    /* 容器宽度保持桌面端 */
+    .policy-container {
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 2rem auto !important;
+        padding: 0 1rem !important;
+    }
+
+    /* 分类区域 */
+    .policy-category {
+        padding: 2rem !important;
+        margin-bottom: 2rem !important;
+        background: #fff !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    }
+
+    /* 面包屑导航 */
+    .breadcrumb {
+        font-size: 0.9em !important;
+        white-space: normal !important;
+        overflow: visible !important;
+    }
+
+    /* 卡片列表自适应列数，宽度不足自动单列 */
+    .policy-list {
+        display: grid !important;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+
+    /* 卡片样式 */
+    .policy-card {
+        display: grid !important;
+        grid-template-columns: 90px 1fr !important;
+        padding: 1.3rem !important;
+        margin: 0 !important;
+        gap: 12px !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* 禁用悬停和点击效果 */
+    .policy-card:hover,
+    .policy-card:active::after {
+        transform: none !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important;
+        background: none !important;
+    }
+
+    /* 日期盒子竖直布局 */
+    .date-box {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 10px 12px !important;
+    }
+
+    /* 日期字体 */
+    .year {
+        font-size: 1.1rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .month-day {
+        font-size: 1.3rem !important;
+    }
+
+    /* 内容区域 */
+    .policy-content {
+        display: flex !important;
+        align-items: center !important;
+        padding: 0 12px !important;
+        min-height: 80px !important;
+    }
+
+    .policy-content h3 {
+        font-size: 1.3rem !important;
+        margin: 0 !important;
+        line-height: 1.5 !important;
+    }
+}

@@ -1,0 +1,81 @@
+/* 轮播容器 */
+.simple-banner {
+    width: 100%;
+    max-width: 1200px;       /* 最大宽度 */
+    margin: 0 auto;          /* 居中显示 */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 400px;       /* 限制轮播最大高度 */
+}
+
+/* 轮播图片 */
+.carousel-image,
+.carousel a img {
+    max-height: 400px;       /* 图片最大高度 */
+    width: auto;             /* 宽度按比例自适应 */
+    display: none;           /* 默认隐藏 */
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image.active,
+.carousel a img.active {
+    display: block;          /* 显示激活图片 */
+}
+
+/* 按钮 */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+.carousel-btn.prev { left: 1rem; }
+.carousel-btn.next { right: 1rem; }
+
+/* 小点（带背景色板，始终在图片底部居中） */
+.carousel-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 5px 10px;            /* 内边距，留出底板空间 */
+    background: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+    border-radius: 12px;           /* 圆角美观 */
+    z-index: 10;
+}
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.8); /* 白色高亮点 */
+    cursor: pointer;
+}
+.dot.active {
+    background: #007a8a;          /* 高亮颜色 */
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .simple-banner {
+        max-height: 300px;        /* 移动端最大高度 */
+    }
+    .carousel-image,
+    .carousel a img {
+        max-height: 300px;        /* 移动端图片最大高度 */
+    }
+    .carousel-btn {
+        font-size: 1.5rem;
+    }
+}
