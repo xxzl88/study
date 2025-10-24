@@ -15,7 +15,7 @@ async function renderList(category) {
     container.innerHTML = list.map(item => {
       const [year, month, day] = item.date.split("-");
       return `
-        <article class="policy-card" onclick="window.open('${item.url}', '_blank')">
+          <article class="policy-card" onclick="window.location.href='${item.url}'">
           <div class="date-box">
             <div class="year">${year}</div>
             <div class="month-day">${month}-${day}</div>
