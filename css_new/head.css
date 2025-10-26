@@ -1,7 +1,7 @@
 /* 顶部导航栏整体样式 */
 .full-header {
   background: var(--tsinghua-purple);
-  padding: 0.6rem 0;                   /* 固定高度 */
+  padding: 1.3rem 0;                   /* 固定高度 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;                        /* 占满宽度 */
   box-sizing: border-box;             /* 避免 padding 导致总宽超出 */
