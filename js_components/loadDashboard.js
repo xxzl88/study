@@ -1,8 +1,8 @@
 async function loadDashboard() {
   const sections = [
-    { id: "zxyw-list", file: "news/zxyw.json" }
+    { id: "zxyw-list", file: "news/zxyw.json" },
     { id: "notice-list", file: "news/ggxx.json" },
-    { id: "data-list", file: "news/xxzl.json" },
+    { id: "data-list", file: "news/xxzl.json" }
 
     // 后续可继续加 { id: "other-list", file: "news/tzgg.json" }
   ];
