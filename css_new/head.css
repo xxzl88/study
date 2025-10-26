@@ -33,6 +33,7 @@
   height: 70px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 @media print {
   /* 顶部导航栏整体 */
   .full-header {
@@ -51,12 +52,13 @@
     align-items: center !important;
   }
 
-  /* 左侧标题固定大小 */
+  /* 左侧标题固定大小，并加入左边距避免顶到左边 */
   .header-left h1 {
     font-size: 2rem !important;
     line-height: 2.5rem !important;
     margin: 0 !important;
     white-space: nowrap !important;
+    padding-left: 5mm !important; /* 添加左边距，避免顶到最左边 */
   }
 
   /* 右侧二维码自动缩放 */
