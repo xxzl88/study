@@ -32,7 +32,9 @@ async function renderCategory(category, filePath) {
 }
 
 // ✅ 页面加载时依次渲染不同分类
+renderCategory("zxyw", "news/zxyw.json");
 renderCategory("ggxx", "news/ggxx.json");
 renderCategory("xxzl", "news/xxzl.json");
+
 // 如果以后还要新增：
 // renderCategory("tzgg", "news/tzgg.json");
