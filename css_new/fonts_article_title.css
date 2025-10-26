@@ -1,32 +1,3 @@
-.back-button {
-    margin-left: 0.8rem; /* 增加文字左侧间距 */
-    padding: 0.4rem 1rem;
-    border-radius: 6px; /* 按钮圆角 */
-    transition: var(--transition);
-}
-
-@media (max-width: 1024px) {
-    .back-button {
-        margin-left: 0.6rem;
-        padding: 0.3rem 0.8rem;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .back-button {
-        margin-left: 0.5rem;
-        border-radius: 4px;
-    }
-}
-
-@media (max-width: 480px) {
-    .back-button {
-        margin-left: 0.3rem;
-        padding: 0.2rem 0.6rem;
-    }
-}
-
 /* 文章标题容器 */
 .article-header {
     width: 100%;
