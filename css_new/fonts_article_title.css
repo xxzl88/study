@@ -1,3 +1,5 @@
+/* ========== 您原先给出的样式（原样复刻） ========== */
+
 /* 文章标题容器 */
 .article-header {
     width: 100%;
@@ -82,5 +84,91 @@
     
     .divider {
         border-width: 1px;
+    }
+}
+
+/* ========== 最小覆盖（只在此处添加/修改以实现行为） ========== */
+
+/* meta-container 保持可换行，确保标题占整行，时间 + 按钮在下一行 */
+.meta-container {
+    display: flex;
+    flex-wrap: wrap;      /* 允许换行：标题占一行，时间+按钮在下一行 */
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    padding-bottom: 1.5rem; /* 保持原有底部间距 */
+}
+
+/* 强制标题占一整行，且居中 */
+.article-title {
+    flex: 0 0 100%;       /* 占满整行 */
+    text-align: center;   /* 标题居中 */
+    margin-bottom: 0.6rem; /* 微调底部间距 */
+}
+
+/* 第二行容器：用于包裹发布时间与按钮 */
+.meta-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+/* 发布时间左对齐 */
+.article-date {
+    flex: 0 1 auto; /* 靠左对齐 */
+    margin: 0;      /* 清除底部间距 */
+    align-self: center;
+}
+
+/* 按钮容器右对齐 */
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto; /* 关键：按钮右对齐 */
+    flex: 0 0 auto;
+}
+
+/* 按钮的美化样式（去掉背景色，纯边框样式） */
+.font-size-btn,
+.print-btn {
+    padding: 6px 6px;  /* 设置内边距 */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;    /* 适当增大字体 */
+    color: black;  /* 字体颜色 */
+    border: 2px solid #007a8a; /* 添加边框 */
+    border-radius: 6px; /* 圆角 */
+    background: none;  /* 去掉背景 */
+    transition: all 0.3s ease;  /* 平滑过渡效果 */
+    outline: none;  /* 移除焦点时的轮廓 */
+}
+/* ========== 媒体适配：屏幕宽度小于768px时调整布局 ========== */
+@media (max-width: 768px) {
+    /* 强制标题占整行并居中 */
+    .article-title {
+        text-align: center; /* 保持标题居中 */
+        margin-bottom: 1rem; /* 增加底部间距 */
+    }
+
+    /* 第二行容器：使日期与按钮居中 */
+    .meta-row {
+        flex-direction: column;  /* 日期与按钮上下排列 */
+        align-items: center;     /* 居中对齐 */
+        gap: 0.8rem;  /* 调整间距 */
+    }
+
+    /* 发布时间居中 */
+    .article-date {
+        text-align: center;  /* 居中 */
+        flex: 0 0 100%;       /* 占满整行 */
+        margin-bottom: 0.5rem; /* 增加底部间距 */
+    }
+
+    /* 按钮容器：隐藏按钮 */
+    .buttons-container {
+        display: none; /* 隐藏按钮 */
     }
 }
