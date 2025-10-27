@@ -36,7 +36,15 @@
         <div class="article-header">
             <div class="meta-container">
                 <h1 class="article-title">[转载]中国共产党第二十届中央委员会第四次全体会议公报</h1>
-                <div class="article-date">发布时间：2025-10-23</div>
+                <!-- 第二行：发布时间与按钮同一行（由 .meta-row 控制） -->
+                <div class="meta-row">
+                    <div class="article-date">发布时间：2025-10-23 20:18:57</div>
+                    <div class="buttons-container">
+                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小 </button>
+                        <button class="font-size-btn" id="font-larger" type="button" title="放大字体">放大</button>
+                        <button class="print-btn" id="print-page" type="button" title="打印">打印</button>
+                    </div>
+                </div>
                 <div class="divider"></div>
             </div>
         </div>
@@ -135,6 +143,7 @@
     </div>
     <!-- 动态加载的 footer -->
     <div id="footer"></div>
+    <script src="js_components/button_print_ziti.js"></script>
     <script src="js_components/inner_title.js"></script>
     <script src="js_components/common.js"></script>
     <script src="js_components/load_footer.js"></script>
