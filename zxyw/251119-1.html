@@ -56,35 +56,17 @@
     <script src="js_components/common.js"></script>
     <script src="js_components/load_footer.js"></script>
     <script src="js_components/load_inner_index.js"></script>
+    
     <script>
         // 动态填充标题和日期
         const articleTitle = "外交部：如日方拒不撤回涉台错误言论，一切后果由日方承担";
         const articleDate = "2025-11-19 20:42";
-        // 渲染到页面
-        document.getElementById("article-title").textContent = articleTitle;
-        document.getElementById("article-date").textContent = `发布时间：${articleDate}`;
         const rawText = `
         外交部发言人毛宁19日在例行记者会上表示，日本首相高市早苗的涉台错误言论从根本上损害了中日关系的政治基础，激起了中国人民的公愤和谴责。如果日方拒不撤回甚至一错再错，中方将不得不采取严厉坚决的反制措施，由此产生的一切后果由日方承担。“中方严肃敦促日方收回错误言论，停止在涉华问题上制造事端，以实际行动认错纠偏，维护中日关系政治基础。”
         `;
-        // 按行拆分
-        const lines = rawText.split('\n').filter(line => line.trim() !== '');
-        const contentContainer = document.getElementById('article-content');
-        lines.forEach(line => {
-            let tag = 'p';
-            let text = line.trim();
-            if (text.startsWith('# ')) {
-                tag = 'h1';
-                text = text.slice(2).trim();
-            } else if (text.startsWith('## ')) {
-                tag = 'h2';
-                text = text.slice(3).trim();
-            }
-            const element = document.createElement(tag);
-            element.textContent = text;
-            contentContainer.appendChild(element);
-        });
     </script>
 
+    <script src="js_components/content_auto.js"></script>
 </body>
 
 </html>
