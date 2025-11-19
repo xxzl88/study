@@ -1,40 +1,72 @@
-/* 左侧固定导航栏整体 */
+/* 顶部导航栏整体 */
+.out {
+  width: 100%;
+  /* 背景占满整个页面宽度 */
+  background: #007a8a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  z-index: 1000;
+  box-sizing: border-box;
+  position: relative;
+  /* 非 fixed */
+  padding: 0;
+  /* 背景不留边距 */
+}
+
 .ministerial-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;                  /* 占满屏幕高度 */
-  width: 180px;                   /* 导航栏宽度 */
-  background: #007a8a;            /* 主色调 */
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  background: #007a8a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  /* 垂直排列 */
   z-index: 1000;
+  box-sizing: border-box;
+  position: relative;
+  /* 非 fixed */
+  max-width: 1200px;
+  /* 固定宽度 */
+  margin: 0 auto;
+  /* 居中 */
+  padding: 0 1.5rem;
+  /* 固定左右内边距 */
 }
 
-/* 标题区域 */
+/* 顶部区域容器 */
 .site-title-box {
-  padding: 30px 0 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 左右分开 */
+  padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: none;
 }
 
-.site-title {
-  font-size: 1.5rem;
-  color: #ffffff;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin: 0;
-  line-height: 1.4;
+/* 菜单按钮靠右 */
+.menu-toggle {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* 菜单文字靠左 */
+.menu-label {
+  font-size: 1.3rem;
+  color: white;
+  display: none;
+  /* 默认隐藏，大屏幕不显示 */
+  font-weight: bold;
 }
 
 /* 内部布局 */
 .nav-inner {
+  padding: 0 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 6px;
-  padding: 20px 0;
+  padding: 2px 0;
 }
 
 /* 链接样式 */
@@ -59,13 +91,11 @@
   color: #ffd700;
   background: rgba(0, 0, 0, 0.25);
   border-left: 4px solid #ffd700;
+  border-right: 4px solid #ffd700;
   font-weight: 600;
 }
 
-/* 页面主体内容需要右移 */
-body {
-  margin-left: 180px;             /* 预留导航栏空间 */
-}
+
 
 /* 响应式处理：在手机上改为顶部栏 */
 @media (max-width: 768px) {
@@ -74,21 +104,27 @@ body {
     height: auto;
     width: 100%;
     flex-direction: column;
+    padding: 0;
   }
 
-  /* 顶部标题区域 */
+  .menu-label {
+    display: inline;
+  }
+
   .site-title-box {
+    padding: 12px 25px 12px 25px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 25px;        /* 上下内边距更大，增加高度 */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .site-title {
-    font-size: 1.4rem;         /* 标题字体适中 */
-    margin: 0;
-    line-height: 1.4;
+  /* 菜单按钮 */
+  .menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: block;
+    /* 确保显示 */
   }
 
   .nav-inner {
@@ -105,16 +141,6 @@ body {
     margin-left: 0;
   }
 }
-/* 菜单按钮（仅在小屏显示） */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  cursor: pointer;
-  margin-left: 10px;
-}
 
 /* 响应式处理 */
 @media (max-width: 768px) {
@@ -125,23 +151,12 @@ body {
     flex-direction: column;
   }
 
-  .site-title-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .menu-toggle {
-    display: block; /* 小屏显示菜单按钮 */
-  }
-
   .nav-inner {
     flex-direction: column;
     width: 100%;
     background: #007a8a;
-    display: none; /* 默认隐藏菜单 */
+    display: none;
+    /* 默认隐藏菜单 */
   }
 
   /* 展开菜单时显示 */
@@ -156,44 +171,5 @@ body {
 
   body {
     margin-left: 0;
-  }
-}
-@media print and (orientation: landscape) {
-  /* 强制左侧导航栏桌面端样式 */
-  .ministerial-nav {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 180px !important;
-    height: 100vh !important;
-    background: #007a8a !important;
-    flex-direction: column !important;
-    display: flex !important;
-    box-shadow: none !important;
-    z-index: 1000 !important;
-  }
-
-  /* 隐藏小屏菜单按钮 */
-  .menu-toggle {
-    display: none !important;
-  }
-
-  /* 导航链接显示完整 */
-  .nav-inner {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* 激活态高亮 */
-  .nav-link.active {
-    color: #ffd700 !important;
-    background: rgba(0,0,0,0.25) !important;
-    border-left: 4px solid #ffd700 !important;
-    font-weight: 600 !important;
-  }
-
-  /* 主体内容右移，避免遮挡导航栏 */
-  body, main, .content {
-    margin-left: 180px !important;
   }
 }
