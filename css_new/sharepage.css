@@ -41,7 +41,6 @@
 .qr-code-area {
     margin: 0 auto 15px auto;
     padding: 10px;
-    background: #fafafa;
     border-radius: 8px;
     display: flex;
     justify-content: center; /* 二维码水平居中 */
