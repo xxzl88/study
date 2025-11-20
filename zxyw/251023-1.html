@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css_new/inner_card.css">
     <link rel="stylesheet" href="css_new/inner_fonts_main.css">
     <link rel="stylesheet" href="css_new/fonts_article_title.css">
+    <link rel="stylesheet" href="css_new/sharepage.css">
 </head>
 
 <head>
@@ -38,11 +39,18 @@
                 <h1 class="article-title">[转载]中国共产党第二十届中央委员会第四次全体会议公报</h1>
                 <!-- 第二行：发布时间与按钮同一行（由 .meta-row 控制） -->
                 <div class="meta-row">
-                    <div class="article-date">发布时间：2025-10-23 20:18:57</div>
+                    <div class="article-date">发布时间：2025-10-23 20:18</div>
                     <div class="buttons-container">
-                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小 </button>
+                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小</button>
                         <button class="font-size-btn" id="font-larger" type="button" title="放大字体">放大</button>
-                        <button class="print-btn" id="print-page" type="button" title="打印">打印</button>
+                        <span class="btn-divider"></span>
+                        <button class="print-btn" id="print-page" type="button" title="打印">
+                            🖨 打印
+                        </button>
+                        <span class="btn-divider"></span>
+                        <button class="font-size-btn" id="share-page" type="button" title="分享本页">
+                            🔗 分享
+                        </button>
                     </div>
                 </div>
                 <div class="divider"></div>
@@ -143,11 +151,14 @@
     </div>
     <!-- 动态加载的 footer -->
     <div id="footer"></div>
+    <!-- 二维码弹窗占位符 -->
+    <div id="qr-placeholder"></div>
     <script src="js_components/button_print_ziti.js"></script>
     <script src="js_components/inner_title.js"></script>
     <script src="js_components/common.js"></script>
     <script src="js_components/load_footer.js"></script>
     <script src="js_components/load_inner_index.js"></script>
+    <script src="js_components/sharepage.js"></script>
 </body>
 
 </html>
