@@ -2,19 +2,29 @@
     const qrPlaceholder = document.getElementById("qr-placeholder");
 
     qrPlaceholder.innerHTML = `
-    <div id="qr-modal" style="display:none;">
-        <div id="qr-box">
-            <h3 class="qr-title">微信扫码分享本页</h3>
-            <p class="qr-hint">用微信扫一扫，即可将本页面分享给好友</p>
-            <div id="qrcode" class="qr-code-area"></div>
-            <div class="qr-btn-group">
-                <button id="qr-download" class="qr-download-btn">下载二维码</button>
-                <button id="qr-close" class="qr-close-btn">关闭</button>
-            </div>
+<div id="qr-modal" style="display:none;">
+    <div id="qr-box">
+        <h3 class="qr-title">微信扫码分享本页</h3>
+        <p class="qr-hint">用微信扫一扫，即可将本页面分享给好友</p>
+        <!-- 两行显示 URL -->
+        <div class="qr-url">
+            <span class="url-label">页面链接</span>
+            <a href="" id="page-url" target="_blank"></a>
         </div>
-    </div>`;
+        <div id="qrcode" class="qr-code-area"></div>
+        <div class="qr-btn-group">
+            <button id="qr-download" class="qr-download-btn">下载二维码</button>
+            <button id="qr-close" class="qr-close-btn">关闭</button>
+        </div>
+    </div>
+</div>
+`;
 })();
-
+// 显示当前页面 URL 并设置链接
+const pageUrl = window.location.href;
+const urlLink = document.getElementById("page-url");
+urlLink.textContent = pageUrl;
+urlLink.href = pageUrl;
 // 点击分享按钮生成二维码
 document.getElementById("share-page").onclick = function () {
     document.getElementById("qr-modal").style.display = "flex";
