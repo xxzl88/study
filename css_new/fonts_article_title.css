@@ -145,6 +145,13 @@
     transition: all 0.3s ease;  /* 平滑过渡效果 */
     outline: none;  /* 移除焦点时的轮廓 */
 }
+/* 按钮之间的竖线分隔符 */
+.btn-divider {
+    width: 1px;
+    height: 25px;
+    background-color: #007a8a; /* 与按钮边框同色，更统一 */
+    display: inline-block;
+}
 /* ========== 媒体适配：屏幕宽度小于768px时调整布局 ========== */
 @media (max-width: 768px) {
     /* 强制标题占整行并居中 */
