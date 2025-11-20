@@ -1,10 +1,10 @@
 /* 顶部导航栏整体样式 */
 .full-header {
   background: var(--tsinghua-purple);
-  padding: 1.3rem 0;                   /* 固定高度 */
+  padding: 1.1rem 0;                
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;                        /* 占满宽度 */
-  box-sizing: border-box;             /* 避免 padding 导致总宽超出 */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* 内部容器：左右分布，居中 */
@@ -12,61 +12,55 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;                  /* 固定宽度 */
-  margin: 0 auto;                      /* 居中 */
-  padding: 0 1.5rem;                   /* 固定左右内边距 */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   box-sizing: border-box;
 }
 
-/* 左侧标题 */
-.header-left h1 {
-  color: var(--text-white);
-  font-size: 2rem;                     /* 固定字体大小 */
-  line-height: 2.5rem;                 /* 固定行高 */
-  margin: 0;
-  white-space: nowrap;                 /* 不换行 */
+/* 左侧：logo + 标题 */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;               /* logo 和标题间距 */
 }
 
-/* 右侧二维码 */
-.header-qrcode {
-  width: 70px;                          /* 固定大小 */
-  height: 70px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.header-logo {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;      /* 你可以改成 50% 做圆形 logo */
 }
 
+/* 右侧预留区域 */
+.header-right {
+  width: 200px;            /* 可调，也可删除让其自适应 */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* ---------------------- */
+/*        打印模式        */
+/* ---------------------- */
 @media print {
-  /* 顶部导航栏整体 */
+    .header-logo {
+    display: block !important;
+    visibility: visible !important;
+    width: 300px !important;   /* 打印尺寸 */
+    height: auto !important;
+  }
   .full-header {
     width: 100% !important;
-    padding: 0.6rem 0 !important;  /* 固定高度 */
+    padding: 0.6rem 0 !important;
     box-shadow: none !important;
   }
 
-  /* 内部容器自适应纸张 */
   .header-container {
-    max-width: 100% !important;  /* 占满打印纸张 */
-    margin: 0 auto !important;
-    padding: 0 0.5rem !important; /* 减小内边距 */
+    max-width: 100% !important;
+    padding: 0 0.5rem !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-  }
-
-  /* 左侧标题固定大小，并加入左边距避免顶到左边 */
-  .header-left h1 {
-    font-size: 2rem !important;
-    line-height: 2.5rem !important;
-    margin: 0 !important;
-    white-space: nowrap !important;
-    padding-left: 5mm !important; /* 添加左边距，避免顶到最左边 */
-  }
-
-  /* 右侧二维码自动缩放 */
-  .header-qrcode {
-    width: auto !important;           /* 自动适应容器宽度 */
-    height: auto !important;          /* 保持比例 */
-    max-width: 10% !important;        /* 最大占容器宽度比例，可调整 */
-    max-height: 50px !important;      /* 最大高度限制，防止过高 */
-    border: 1px solid rgba(0,0,0,0.3) !important;
   }
 }
