@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 <head>
+    <div id="common-head-placeholder"></div>
     <!-- 保持与主页相同的meta和css引用 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +17,8 @@
     <link rel="stylesheet" href="css_new/inner_card.css">
     <link rel="stylesheet" href="css_new/inner_fonts_main.css">
     <link rel="stylesheet" href="css_new/fonts_article_title.css">
+    <link rel="stylesheet" href="css_new/sharepage.css">
 </head>
-
 <head>
     <link rel="stylesheet" href="../css/Mypdf-container.css">
 </head>
@@ -35,13 +36,19 @@
         <div class="article-header">
             <div class="meta-container">
                 <h1 class="article-title" id="article-title"></h1>
-                <!-- 第二行：发布时间与按钮同一行（由 .meta-row 控制） -->
                 <div class="meta-row">
                     <div class="article-date" id="article-date"></div>
                     <div class="buttons-container">
-                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小 </button>
+                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小</button>
                         <button class="font-size-btn" id="font-larger" type="button" title="放大字体">放大</button>
-                        <button class="print-btn" id="print-page" type="button" title="打印">打印</button>
+                        <span class="btn-divider"></span>
+                        <button class="print-btn" id="print-page" type="button" title="打印">
+                            🖨 打印
+                        </button>
+                        <span class="btn-divider"></span>
+                        <button class="font-size-btn" id="share-page" type="button" title="分享本页">
+                            🔗 分享
+                        </button>
                     </div>
                 </div>
                 <div class="divider"></div>
@@ -49,6 +56,8 @@
         </div>
         <div class="article-content" id="article-content"></div>
     </div>
+    <!-- 二维码弹窗占位符 -->
+    <div id="qr-placeholder"></div>
     <!-- 动态加载的 footer -->
     <div id="footer"></div>
     <script src="js_components/button_print_ziti.js"></script>
@@ -56,7 +65,7 @@
     <script src="js_components/common.js"></script>
     <script src="js_components/load_footer.js"></script>
     <script src="js_components/load_inner_index.js"></script>
-    
+    <script src="js_components/sharepage.js"></script>
     <script>
         // 动态填充标题和日期
         const articleTitle = "外交部：如日方拒不撤回涉台错误言论，一切后果由日方承担";
@@ -65,7 +74,6 @@
         外交部发言人毛宁19日在例行记者会上表示，日本首相高市早苗的涉台错误言论从根本上损害了中日关系的政治基础，激起了中国人民的公愤和谴责。如果日方拒不撤回甚至一错再错，中方将不得不采取严厉坚决的反制措施，由此产生的一切后果由日方承担。“中方严肃敦促日方收回错误言论，停止在涉华问题上制造事端，以实际行动认错纠偏，维护中日关系政治基础。”
         `;
     </script>
-
     <script src="js_components/content_auto.js"></script>
 </body>
 
