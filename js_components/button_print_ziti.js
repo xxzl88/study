@@ -1,9 +1,9 @@
 (function () {
   // 配置：可根据需要调整
   const SELECTORS = ['.article-content', '.fangsong-text', '.heiti-text', '.kaiti-text'];
-  const STEP = 0.1;       // 每次调整的比例步长（10%）
-  const MIN_SCALE = 0.6;   // 最小缩放比例
-  const MAX_SCALE = 1.4;   // 最大缩放比例
+  const STEP = 0.2;       // 每次调整的比例步长（10%）
+  const MIN_SCALE = 0.8;   // 最小缩放比例
+  const MAX_SCALE = 1.2;   // 最大缩放比例
 
   // 目标按钮 id（与您的 HTML 保持一致）
   const ID_LARGER = 'font-larger';
