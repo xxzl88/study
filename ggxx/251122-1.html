@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <div id="common-head-placeholder"></div>
+    <!-- 保持与主页相同的meta和css引用 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/touxiang.jpg" type="image/x-icon">
+    <base href="../" />
+    <link rel="stylesheet" href="css_new/head_foot.css">
+    <link rel="stylesheet" href="css_new/nav.css">
+    <link rel="stylesheet" href="css_new/head.css">
+    <link rel="stylesheet" href="css_new/foot.css">
+    <link rel="stylesheet" href="css_new/print_foot.css">
+    <link rel="stylesheet" href="css_new/style.css">
+    <link rel="stylesheet" href="css_new/inner_card.css">
+    <link rel="stylesheet" href="css_new/inner_fonts_main.css">
+    <link rel="stylesheet" href="css_new/fonts_article_title.css">
+    <link rel="stylesheet" href="css_new/sharepage.css">
+</head>
+<head>
+    <link rel="stylesheet" href="../css/Mypdf-container.css">
+</head>
+
+<body data-page="ggxx">
+    <!-- 动态加载的 header -->
+    <div id="header"></div>
+    <!-- 动态加载的 nav -->
+    <div id="nav"></div>
+    <div class="policy-container">
+        <div class="breadcrumb">
+            <span>您现在的位置：</span>
+            <a href="index.html">首页</a> &gt; <a href="./ggxx">公告信息</a> &gt; 正文
+        </div>
+        <div class="article-header">
+            <div class="meta-container">
+                <h1 class="article-title" id="article-title"></h1>
+                <div class="meta-row">
+                    <div class="article-date" id="article-date"></div>
+                    <div class="buttons-container">
+                        <button class="font-size-btn" id="font-smaller" type="button" title="缩小字体">缩小</button>
+                        <button class="font-size-btn" id="font-larger" type="button" title="放大字体">放大</button>
+                        <span class="btn-divider"></span>
+                        <button class="print-btn" id="print-page" type="button" title="打印">
+                            🖨 打印
+                        </button>
+                        <span class="btn-divider"></span>
+                        <button class="font-size-btn" id="share-page" type="button" title="分享本页">
+                            🔗 分享
+                        </button>
+                    </div>
+                </div>
+                <div class="divider"></div>
+            </div>
+        </div>
+        <div class="article-content" id="article-content"></div>
+    </div>
+    <!-- 二维码弹窗占位符 -->
+    <div id="qr-placeholder"></div>
+    <!-- 动态加载的 footer -->
+    <div id="footer"></div>
+    <script src="js_components/button_print_ziti.js"></script>
+    <script src="js_components/inner_title.js"></script>
+    <script src="js_components/common.js"></script>
+    <script src="js_components/load_footer.js"></script>
+    <script src="js_components/load_inner_index.js"></script>
+    <script src="js_components/sharepage.js"></script>
+    <script>
+        // 动态填充标题和日期
+        const articleTitle = "关于督促彭紫键同志进行王者荣耀游戏排位上星的通知";
+        const articleDate = "2025-11-22 21:10";
+        const rawText = `
+        彭紫键同学：
+        根据近期组织对你游戏表现的观察与分析，发现你在《王者荣耀》排位赛中的竞技状态与上星进度存在较大提升空间。为充分调动你的游戏积极性，激发你的操作潜能，确保你在赛季结束前达成预期段位目标，现就相关事项通知如下：
+        请你于收到本通知后1小时内，立即打开《王者荣耀》游戏，和群友进行进行5V5排位！
+        希望彭紫键同志能深刻领会本通知精神，立即行动起来，以饱满的热情、科学的方法和坚韧的毅力，全力以赴投入排位上星工作，力争在本赛季取得优异成绩，再创辉煌！
+        特此通知！
+        升华上星大队
+        2025年11月22日
+        `;
+    </script>
+    <script src="js_components/content_auto.js"></script>
+</body>
+
+</html>
+
