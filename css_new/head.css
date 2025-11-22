@@ -64,3 +64,23 @@
     align-items: center !important;
   }
 }
+
+/* ----------- 移动端适配 ----------- */
+@media (max-width: 768px) {
+  .header-container {
+    justify-content: center;  /* 整体居中 */
+  }
+
+  .header-left {
+    justify-content: center;  /* 左侧居中 */
+    width: 100%;
+  }
+
+  .header-right {
+    display: none !important; /* 移动端隐藏右侧 */
+  }
+
+  .header-logo {
+    margin: 0 auto; /* 图片居中 */
+  }
+}
