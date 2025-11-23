@@ -11,7 +11,7 @@ pdfjsLib.getDocument(pdfPath).promise.then(pdf => {
 
     for (let i = 1; i <= pdf.numPages; i++) {
         pdf.getPage(i).then(page => {
-            const scale = 1.3;
+            const scale = 3;
             const viewport = page.getViewport({ scale });
 
             const canvas = document.createElement("canvas");
@@ -34,3 +34,4 @@ pdfjsLib.getDocument(pdfPath).promise.then(pdf => {
     container.innerHTML = "<p style='color:red;text-align:center;'>PDF 加载失败！</p>";
     console.error(err);
 });
+
