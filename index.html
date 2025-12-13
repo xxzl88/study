@@ -22,12 +22,6 @@
     <div id="header"></div>
     <!-- 动态加载的 nav -->
     <div id="nav"></div>
-    <div id="popup" class="popup">
-  <div class="popup-content">
-    <p>停止制作复习资料情况说明</p>
-    <button id="okBtn">确定</button>
-  </div>
-    </div>
     <section class="simple-banner">
         <div class="carousel">
             <!-- 按钮 -->
@@ -73,6 +67,15 @@
             </div>
         </section>
     </div>
+    <!-- 全页面警告弹窗 -->
+<div id="global-alert">
+  <div class="alert-box">
+    <h2>重要说明</h2>
+    <p>停止制作复习资料情况说明</p>
+    <button id="alert-confirm">查看说明</button>
+  </div>
+</div>
+
     <!-- 动态加载的 footer -->
     <div id="footer"></div>
     <!-- js汇总 -->
@@ -80,46 +83,77 @@
     <script src="js_components/loadDashboard.js"></script>
     <script src="js_components/lunbo.js"></script>
     <script src="js_components/load_footer.js"></script>
-    <script>
-window.onload = function() {
-    const popup = document.getElementById("popup");
-    const okBtn = document.getElementById("okBtn");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("alert-confirm");
 
-    // 显示弹窗
-    popup.style.display = "flex";
-
-    okBtn.onclick = function() {
+    btn.addEventListener("click", function () {
         window.location.href = "./ggxx/250929-1.html";
-    };
-};
+    });
+});
 </script>
+
 <style>
-popup {
+/* ===== 全页面警告弹窗 ===== */
+#global-alert {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 99999;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-popup-content {
-  background: #fff;
-  padding: 20px 30px;
-  border-radius: 8px;
+
+/* 弹窗主体 */
+.alert-box {
+  background: #ffffff;
+  padding: 32px 40px;
+  border-radius: 10px;
   text-align: center;
+  max-width: 420px;
+  width: 90%;
 }
 
-popup-content p {
-  font-size: 18px;
-  margin-bottom: 15px;
+/* 标题 */
+.alert-box h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+  color: #c0392b;
+}
+
+/* 内容 */
+.alert-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* 按钮 */
+.alert-box button {
+  padding: 10px 26px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #c0392b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.alert-box button:hover {
+  background-color: #a93226;
+}
+
+/* 禁止背景滚动 */
+body {
+  overflow: hidden;
 }
 </style>
 </body>
 
 </html>
+
 
 
 
