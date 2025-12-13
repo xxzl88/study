@@ -15,9 +15,95 @@
     <link rel="stylesheet" href="css_new/style.css">
     <link rel="stylesheet" href="css_new/lunbo.css">
     <link rel="stylesheet" href="css_new/index_dongtai.css">
+    <style>
+/* ===== 全页面警告弹窗（首页） ===== */
+#global-alert {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 弹窗主体 */
+.alert-box {
+    position: relative;
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+}
+
+/* 右上角关闭按钮 */
+.alert-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+    user-select: none;
+}
+
+.alert-close:hover {
+    color: #333;
+}
+
+/* 标题 */
+.alert-box h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: #c0392b;
+}
+
+/* 内容 */
+.alert-box p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* 按钮 */
+.alert-box button {
+    padding: 10px 26px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #c0392b;
+    color: #fff;
+    cursor: pointer;
+}
+
+.alert-box button:hover {
+    background-color: #a93226;
+}
+
+/* 弹窗打开时禁止滚动 */
+body.modal-open {
+    overflow: hidden;
+}
+</style>
+
 </head>
 
 <body data-page="index">
+
+<!-- ===== 首页重要说明弹窗 ===== -->
+<div id="global-alert">
+    <div class="alert-box">
+        <span class="alert-close" id="alert-close">✕</span>
+        <h2>重要说明</h2>
+        <p>停止制作复习资料情况说明</p>
+        <button id="alert-confirm">查看说明</button>
+    </div>
+</div>
+
+    
     <!-- 动态加载的 header -->
     <div id="header"></div>
     <!-- 动态加载的 nav -->
@@ -67,14 +153,6 @@
             </div>
         </section>
     </div>
-    <!-- 全页面警告弹窗 -->
-<div id="global-alert">
-  <div class="alert-box">
-    <h2>重要说明</h2>
-    <p>停止制作复习资料情况说明</p>
-    <button id="alert-confirm">查看说明</button>
-  </div>
-</div>
 
     <!-- 动态加载的 footer -->
     <div id="footer"></div>
@@ -83,78 +161,35 @@
     <script src="js_components/loadDashboard.js"></script>
     <script src="js_components/lunbo.js"></script>
     <script src="js_components/load_footer.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.getElementById("alert-confirm");
 
-    btn.addEventListener("click", function () {
+<script>
+(function () {
+    // 只在首页生效（你已经有 data-page="index"）
+    if (document.body.dataset.page !== "index") return;
+
+    const alertBox = document.getElementById("global-alert");
+    const closeBtn = document.getElementById("alert-close");
+    const confirmBtn = document.getElementById("alert-confirm");
+
+    // 打开弹窗时禁止滚动
+    document.body.classList.add("modal-open");
+
+    // 关闭弹窗
+    closeBtn.onclick = function () {
+        alertBox.style.display = "none";
+        document.body.classList.remove("modal-open");
+    };
+
+    // 跳转到公告页面
+    confirmBtn.onclick = function () {
         window.location.href = "./ggxx/250929-1.html";
-    });
-});
+    };
+})();
 </script>
 
-<style>
-/* ===== 全页面警告弹窗 ===== */
-#global-alert {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 99999;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 弹窗主体 */
-.alert-box {
-  background: #ffffff;
-  padding: 32px 40px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 420px;
-  width: 90%;
-}
-
-/* 标题 */
-.alert-box h2 {
-  margin: 0 0 16px;
-  font-size: 22px;
-  color: #c0392b;
-}
-
-/* 内容 */
-.alert-box p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-}
-
-/* 按钮 */
-.alert-box button {
-  padding: 10px 26px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  background-color: #c0392b;
-  color: #fff;
-  cursor: pointer;
-}
-
-.alert-box button:hover {
-  background-color: #a93226;
-}
-
-/* 禁止背景滚动 */
-body {
-  overflow: hidden;
-}
-</style>
+    
 </body>
-
 </html>
-
-
 
 
 
