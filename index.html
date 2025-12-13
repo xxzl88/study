@@ -18,6 +18,12 @@
 </head>
 
 <body data-page="index">
+    <div id="popup" class="popup">
+  <div class="popup-content">
+    <p>停止制作复习资料情况说明</p>
+    <button id="okBtn">确定</button>
+  </div>
+</div>
     <!-- 动态加载的 header -->
     <div id="header"></div>
     <!-- 动态加载的 nav -->
@@ -75,9 +81,47 @@
     <script src="js_components/loadDashboard.js"></script>
     <script src="js_components/lunbo.js"></script>
     <script src="js_components/load_footer.js"></script>
+    <script>
+window.onload = function() {
+    const popup = document.getElementById("popup");
+    const okBtn = document.getElementById("okBtn");
+
+    // 显示弹窗
+    popup.style.display = "flex";
+
+    okBtn.onclick = function() {
+        window.location.href = "./ggxx/250929-1.html";
+    };
+};
+</script>
+<style>
+popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+popup-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+popup-content p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+</style>
 </body>
 
 </html>
+
 
 
 
