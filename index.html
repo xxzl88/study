@@ -92,18 +92,6 @@ body.modal-open {
 </head>
 
 <body data-page="index">
-
-<!-- ===== 首页重要说明弹窗 ===== -->
-<div id="global-alert">
-    <div class="alert-box">
-        <span class="alert-close" id="alert-close">✕</span>
-        <h2>重要说明</h2>
-        <p>停止制作复习资料情况说明</p>
-        <button id="alert-confirm">查看说明</button>
-    </div>
-</div>
-
-    
     <!-- 动态加载的 header -->
     <div id="header"></div>
     <!-- 动态加载的 nav -->
@@ -162,34 +150,10 @@ body.modal-open {
     <script src="js_components/lunbo.js"></script>
     <script src="js_components/load_footer.js"></script>
 
-<script>
-(function () {
-    // 只在首页生效（你已经有 data-page="index"）
-    if (document.body.dataset.page !== "index") return;
-
-    const alertBox = document.getElementById("global-alert");
-    const closeBtn = document.getElementById("alert-close");
-    const confirmBtn = document.getElementById("alert-confirm");
-
-    // 打开弹窗时禁止滚动
-    document.body.classList.add("modal-open");
-
-    // 关闭弹窗
-    closeBtn.onclick = function () {
-        alertBox.style.display = "none";
-        document.body.classList.remove("modal-open");
-    };
-
-    // 跳转到公告页面
-    confirmBtn.onclick = function () {
-        window.location.href = "./ggxx/250929-1.html";
-    };
-})();
-</script>
-
     
 </body>
 </html>
+
 
 
 
