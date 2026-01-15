@@ -68,7 +68,7 @@
             <p>QQ号码：718123472（有可能会提示添加风险，查看详情，忽略即可，因为平时没有加好友，突然开始加好友，所以出现了风险提示）</p>
             <h2>获取方式2：添加微信（扫码即可）</h2>
             <div style="text-align: center;">
-                <img src="img/weixin.jpg" alt="微信图片" width="300">
+                <img src="img/weixinsadas.jpg" alt="微信图片" width="300">
             </div>
             
         </div>
