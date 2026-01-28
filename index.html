@@ -15,80 +15,6 @@
     <link rel="stylesheet" href="css_new/style.css">
     <link rel="stylesheet" href="css_new/lunbo.css">
     <link rel="stylesheet" href="css_new/index_dongtai.css">
-    <style>
-/* ===== 全页面警告弹窗（首页） ===== */
-#global-alert {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-    z-index: 99999;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 弹窗主体 */
-.alert-box {
-    position: relative;
-    background: #fff;
-    padding: 32px 40px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 420px;
-    width: 90%;
-}
-
-/* 右上角关闭按钮 */
-.alert-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    font-size: 20px;
-    color: #999;
-    cursor: pointer;
-    user-select: none;
-}
-
-.alert-close:hover {
-    color: #333;
-}
-
-/* 标题 */
-.alert-box h2 {
-    margin: 0 0 16px;
-    font-size: 22px;
-    color: #0099a6;
-}
-
-/* 内容 */
-.alert-box p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-/* 按钮 */
-.alert-box button {
-    padding: 10px 26px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    background-color: #0099a6;
-    color: #fff;
-    cursor: pointer;
-}
-
-.alert-box button:hover {
-    background-color: #a93226;
-}
-
-/* 弹窗打开时禁止滚动 */
-body.modal-open {
-    overflow: hidden;
-}
-</style>
-
 </head>
 
 <body data-page="index">
@@ -101,20 +27,20 @@ body.modal-open {
             <!-- 按钮 -->
             <button class="carousel-btn prev">‹</button>
             <button class="carousel-btn next">›</button>
-
             <!-- 图片，可用 a 包裹跳转 -->
-            <img src="img/01.png" class="carousel-image" alt="图片1">
+             <a href="http://weixin.qq.com/r/mp/RhHcxJ3E7sCRrdmn90RU" target="_blank">
+                <img src="img/gzh.png" class="carousel-image" alt="图片1">
             </a>
-           <!-- <img src="img/02.png" class="carousel-image" alt="图片2">-->
+            </a>
+           <img src="img/01.png" class="carousel-image" alt="图片2">
             <a href="https://www.gov.cn/guoqing/2021-10/29/content_5647633.htm" target="_blank">
                 <img src="img/03.png" class="carousel-image" alt="图片3">
             </a>
-
             <!-- 小点 -->
             <div class="carousel-dots">
                 <span class="dot active" data-index="0"></span>
                 <span class="dot" data-index="1"></span>
-               <!-- <span class="dot" data-index="2"></span>-->
+               <<span class="dot" data-index="2"></span>
             </div>
         </div>
     </section>
@@ -153,6 +79,7 @@ body.modal-open {
     
 </body>
 </html>
+
 
 
 
