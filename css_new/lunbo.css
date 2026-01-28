@@ -70,12 +70,15 @@
 @media (max-width: 768px) {
     .simple-banner {
         max-height: 300px;        /* 移动端最大高度 */
+        max-width: 100%;
     }
     .carousel-image,
     .carousel a img {
         max-height: 300px;        /* 移动端图片最大高度 */
+        max-width: 100%;
     }
     .carousel-btn {
         font-size: 1.5rem;
     }
 }
+
