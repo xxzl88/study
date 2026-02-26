@@ -115,7 +115,8 @@
     line-height: 1.6;
   }
 
-  .article-content h2 {
+  .article-content h2
+  .article-contemt h3 {
     font-size: 22px;
   }
 }
@@ -133,7 +134,8 @@
   }
 
   .article-content h1,
-  .article-content h2 {
+  .article-content h2,
+  .article-content h3 {
     font-size: 18px;
     padding: 8px 12px;
     line-height: 1.4;
