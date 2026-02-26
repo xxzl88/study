@@ -69,8 +69,7 @@
   }
 
   /* 文章内容优化 */
-  .article-content {
-      background-color: #ffffff !important; /* 保持文章背景 */
+  .article-content {
       padding: 1rem !important; /* 为文章内容增加内边距 */
       width: 100% !important; /* 使内容横向扩展至全宽 */
       box-sizing: border-box !important; /* 确保内边距不影响宽度 */
