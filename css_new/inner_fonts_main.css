@@ -69,8 +69,7 @@
 /* --- H2 样式：保留块状感，作为一级大标题 --- */
 .article-content h2 {
   text-indent: 0;
-  font-family: 'MyTimes', 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
-  font-weight: bold;
+  font-family: 'MyTimes', 'Times New Roman', 'MyHeiti', '黑体', 'Heiti', 'STFangsong', serif;
   font-size: 1.6rem; /* 稍微大一点 */
   margin-top: 25px;
   margin-bottom: 15px;
