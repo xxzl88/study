@@ -66,28 +66,42 @@
   margin-left: 0;
 }
 
-/* 标题样式 */
-.article-content h1,
+/* --- H2 样式：保留块状感，作为一级大标题 --- */
 .article-content h2 {
   text-indent: 0;
-  font-family:
-    'MyTimes',
-    'Times New Roman',
-    'MyFangSong',
-    '仿宋',
-    'FangSong',
-    'STFangsong',
-    serif;
+  font-family: 'MyTimes', 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
   font-weight: bold;
-  margin-top: 20px;
+  font-size: 1.5rem; /* 稍微大一点 */
+  margin-top: 25px;
   margin-bottom: 15px;
   text-align: left;
   line-height: 1.4;
   padding: 10px 15px;
-  border-left: 4px solid var(--tsinghua-purple);
-  background-color: rgba(0, 153, 166, 0.1);
+  border-left: 5px solid var(--tsinghua-purple); /* 边框加粗 */
+  background-color: rgba(0, 153, 166, 0.05); /* 使用淡淡的紫色背景，与主题色呼应 */
   color: var(--tsinghua-purple);
 }
+
+/* --- H3 样式：更加简洁，突出小节感 --- */
+.article-content h3 {
+  text-indent: 0;
+  font-family: 'MyTimes', 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
+  font-weight: bold;
+  font-size: 1.25rem; /* 字号略小于 h2 */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  line-height: 1.4;
+  padding: 5px 0 5px 12px; /* 只有左侧 padding */
+  
+  /* 区分点：取消背景，改用细边框或底边框 */
+  background-color: transparent; 
+  border-left: 3px solid var(--tsinghua-purple);
+  border-bottom: 1px dashed rgba(115, 30, 124, 0.3); /* 增加虚线下划线，增加精致感 */
+  
+  color: var(--tsinghua-purple);
+}
+
 
 
 /* ================================
