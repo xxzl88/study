@@ -71,7 +71,7 @@
   text-indent: 0;
   font-family: 'MyTimes', 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
   font-weight: bold;
-  font-size: 1.5rem; /* 稍微大一点 */
+  font-size: 1.6rem; /* 稍微大一点 */
   margin-top: 25px;
   margin-bottom: 15px;
   text-align: left;
@@ -87,7 +87,7 @@
   text-indent: 0;
   font-family: 'MyTimes', 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
   font-weight: bold;
-  font-size: 1.25rem; /* 字号略小于 h2 */
+  font-size: 1rem; /* 字号略小于 h2 */
   margin-top: 20px;
   margin-bottom: 10px;
   text-align: left;
@@ -96,8 +96,7 @@
   
   /* 区分点：取消背景，改用细边框或底边框 */
   background-color: transparent; 
-  border-left: 3px solid var(--tsinghua-purple);
-  border-bottom: 1px dashed rgba(115, 30, 124, 0.3); /* 增加虚线下划线，增加精致感 */
+  border-bottom: 1px dashed rgba(0, 153, 166, 0.3); /* 增加虚线下划线，增加精致感 */
   
   color: var(--tsinghua-purple);
 }
