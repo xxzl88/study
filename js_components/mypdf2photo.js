@@ -8,6 +8,7 @@ loading.innerHTML = `
   <div class="loading-spinner"></div>
   <p>PDF 加载中，请稍候...</p>
   <p>如果长时间没有响应，请刷新页面。</p>
+  <p>土豆服务器，千万不要着急，如果合理使用魔法的话会极大的提高加载速度。</p>
 `;
 container.appendChild(loading);
 
