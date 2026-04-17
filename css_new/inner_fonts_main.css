@@ -25,6 +25,9 @@
   color: #333;
   /* 深灰色字体 */
   margin: 1em 0;
+    /* 新增边框 */
+  border: 2px solid #0099a6;
+  padding: 1em; /* 建议加内边距，不然文字贴边不好看 */
 }
 
 /* 段落样式 */
@@ -101,7 +104,8 @@ border-right: 5px solid var(--tsinghua-purple); /* 边框加粗 */
   color: var(--tsinghua-purple);
 }
 
-
+
+
 
 /* ================================
    📱 响应式优化（小屏幕字体缩放）
@@ -117,14 +121,16 @@ border-right: 5px solid var(--tsinghua-purple); /* 边框加粗 */
   .article-content h2
   .article-contemt h3 {
     font-size: 22px;
-  }
+  }
+
 }
 
 /* 手机端（≤768px） */
 @media screen and (max-width: 768px) {
   .article-content {
     font-size: 18px;
-    line-height: 1.55;
+    line-height: 1.55;
+
   }
 
   .article-content p {
@@ -138,8 +144,10 @@ border-right: 5px solid var(--tsinghua-purple); /* 边框加粗 */
     font-size: 18px;
     padding: 8px 12px;
     line-height: 1.4;
-  }
-}
+  }
+
+}
+
 /* 超小屏幕（≤480px） */
 @media screen and (max-width: 480px) {
   .article-content {
