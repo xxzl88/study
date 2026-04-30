@@ -1,3 +1,7 @@
+span.article-content {
+  border: none;
+  padding: 0;
+}
 /* 正文部分文字格式（仿宋风格） */
 .article-content {
   font-family:
@@ -115,7 +119,7 @@
     line-height: 1.6;
   }
 
-  .article-content h2
+  .article-content h2,
   .article-contemt h3 {
     font-size: 22px;
   }
